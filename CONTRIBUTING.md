@@ -25,7 +25,6 @@ has this line now:
 "@ricefarm/uikit": "../rice-toolkit/packages/rice-uikit/"
 ```
 
-
 ## Setup
 
 Create a `.env.development.local` file at the root of the project. Add the following lines inside :
