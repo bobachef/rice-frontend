@@ -5,6 +5,8 @@
 
 # dependencies
 /node_modules
+!/node_modules/@pancakeswap-libs/uikit/dist/index.cjs.js
+!/node_modules/@pancakeswap-libs/uikit/dist/index.esm.js
 /.pnp
 .pnp.js
 
