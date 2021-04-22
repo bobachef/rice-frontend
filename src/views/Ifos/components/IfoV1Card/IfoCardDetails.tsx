@@ -1,15 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import {
-  Text,
-  LinkExternal,
-  Link,
-  Box,
-  CardFooter,
-  Button,
-  ChevronDownIcon,
-  ChevronUpIcon,
-} from '@pancakeswap-libs/uikit'
+import { Text, LinkExternal, Link, Box, CardFooter, Button, ChevronDownIcon, ChevronUpIcon } from '@ricefarm/uikit'
 import useI18n from 'hooks/useI18n'
 import { PublicIfoData } from 'hooks/ifo/v1/types'
 import { Ifo } from 'config/constants/types'

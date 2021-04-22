@@ -1,14 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import {
-  BlockIcon,
-  CheckmarkCircleIcon,
-  Flex,
-  CrownIcon,
-  Text,
-  TeamPlayerIcon,
-  TrophyGoldIcon,
-} from '@pancakeswap-libs/uikit'
+import { BlockIcon, CheckmarkCircleIcon, Flex, CrownIcon, Text, TeamPlayerIcon, TrophyGoldIcon } from '@ricefarm/uikit'
 import useI18n from 'hooks/useI18n'
 import { UserTradingInformationProps } from '../../types'
 import { useCompetitionCakeRewards, getRewardGroupAchievements } from '../../helpers'

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useWeb3React } from '@web3-react/core'
-import { AutoRenewIcon, Button } from '@pancakeswap-libs/uikit'
+import { AutoRenewIcon, Button } from '@ricefarm/uikit'
 import { PoolIds } from 'config/constants/types'
 import { WalletIfoData } from 'hooks/ifo/v2/types'
 import { useToast } from 'state/hooks'

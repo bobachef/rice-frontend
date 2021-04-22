@@ -1,18 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import every from 'lodash/every'
-import {
-  Stepper,
-  Step,
-  StepStatus,
-  Card,
-  CardBody,
-  Heading,
-  Text,
-  Button,
-  Link,
-  OpenNewIcon,
-} from '@pancakeswap-libs/uikit'
+import { Stepper, Step, StepStatus, Card, CardBody, Heading, Text, Button, Link, OpenNewIcon } from '@ricefarm/uikit'
 import { BASE_ADD_LIQUIDITY_URL } from 'config'
 import useI18n from 'hooks/useI18n'
 import useTokenBalance from 'hooks/useTokenBalance'

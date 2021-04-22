@@ -3,6 +3,29 @@
 Thanks for taking the time to contribute !
 You can start by reading our [Contribution guidelines](https://docs.ricefarm.fi/code/contributing) first.
 
+## Setup 
+
+Clone the following repos:
+1. https://github.com/rice-farm/rice-frontend
+2. https://github.com/rice-farm/rice-swap-interface
+3. https://github.com/rice-farm/rice-toolkit
+
+You will notice that both the rice-frontend and rice-swap-interface use a library called `@ricefarm/uikit` and `@ricefarm/eslint-config-rice`. 
+Both of those will be found in the `rice-toolkit` under the `packages` folder. The `uikit` contains a lot of the components
+that are used in the react app.
+
+For local development you can link the uikit using the following command (make sure that you change the path to however you have it setup on your machine)
+```shell
+yarn add ../rice-toolkit/packages/rice-uikit
+```
+
+This will create a symlink in the node_modules folder to your local repo and you'll notice after you install that your `package.json`
+has this line now: 
+```
+"@ricefarm/uikit": "../rice-toolkit/packages/rice-uikit/"
+```
+
+
 ## Setup
 
 Create a `.env.development.local` file at the root of the project. Add the following lines inside :

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Card, CardBody, CardRibbon, Box, Progress } from '@pancakeswap-libs/uikit'
+import { Card, CardBody, CardRibbon, Box, Progress } from '@ricefarm/uikit'
 import { Ifo, IfoStatus } from 'config/constants/types'
 import useI18n from 'hooks/useI18n'
 import useGetPublicIfoData from 'hooks/ifo/v1/useGetPublicIfoData'
