@@ -51,7 +51,7 @@ const EarnAPRCard = () => {
         <Heading color="contrast" size="lg">
           Earn up to
         </Heading>
-        <CardMidContent color="#7645d9">
+        <CardMidContent color="#00B920">
           {highestApr ? (
             `${highestApr}% ${TranslateString(736, 'APR')}`
           ) : (
