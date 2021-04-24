@@ -6,6 +6,7 @@ const config: MenuEntry[] = [
     icon: 'HomeIcon',
     href: '/',
   },
+  /*
   {
     label: 'Trade',
     icon: 'TradeIcon',
@@ -20,6 +21,7 @@ const config: MenuEntry[] = [
       },
     ],
   },
+  */
   {
     label: 'Farms',
     icon: 'FarmIcon',
@@ -30,11 +32,11 @@ const config: MenuEntry[] = [
     icon: 'PoolIcon',
     href: '/pools',
   },
-  {
-    label: 'Lottery',
-    icon: 'TicketIcon',
-    href: '/lottery',
-  },
+  // {
+  //   label: 'Lottery',
+  //   icon: 'TicketIcon',
+  //   href: '/lottery',
+  // },
   {
     label: 'Collectibles',
     icon: 'NftIcon',
