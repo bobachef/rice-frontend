@@ -37,7 +37,7 @@ const TwitterCard = () => {
         <Timeline
           dataSource={{
             sourceType: 'profile',
-            screenName: 'GooseFinance'
+            screenName: 'teslasafe'
           }}
           options={{
 			theme: (isDark) ? "dark" : "light",
