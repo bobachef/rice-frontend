@@ -37,13 +37,13 @@ const TwitterCard = () => {
         <Timeline
           dataSource={{
             sourceType: 'profile',
-            screenName: 'teslasafe'
+            screenName: 'teslasafe',
           }}
           options={{
-			theme: (isDark) ? "dark" : "light",
+            theme: isDark ? 'dark' : 'light',
             height: '300',
-            chrome: "noheader, nofooter",
-            width: "100%"
+            chrome: 'noheader, nofooter',
+            width: '100%',
           }}
         />
       </CardBody>
