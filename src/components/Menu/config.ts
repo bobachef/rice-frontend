@@ -52,7 +52,7 @@ const config: MenuEntry[] = [
       color: 'warning',
     },
   },
-  */
+  
   {
     label: 'Teams & Profile',
     icon: 'GroupsIcon',
@@ -98,6 +98,7 @@ const config: MenuEntry[] = [
     icon: 'IfoIcon',
     href: '/ifo',
   },
+  */
   {
     label: 'More',
     icon: 'MoreIcon',
