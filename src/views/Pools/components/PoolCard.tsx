@@ -93,7 +93,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
   const [onPresentCompound] = useModal(
     <CompoundModal earnings={earnings} onConfirm={onStake} tokenName={stakingToken.symbol} />,
   )
-  const poolImage = `${pool.earningToken.symbol}-${pool.stakingToken.symbol}.svg`.toLocaleLowerCase()
+  const poolImage = `${pool.earningToken.symbol}-${pool.stakingToken.symbol}.png`.toLocaleLowerCase()
   const [onPresentWithdraw] = useModal(
     <WithdrawModal
       max={stakedBalance}
@@ -222,7 +222,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
 }
 
 const PoolFinishedSash = styled.div`
-  background-image: url('/images/pool-finished-sash.svg');
+  background-image: url('/images/pool-finished-sash.png');
   background-position: top right;
   background-repeat: not-repeat;
   height: 135px;

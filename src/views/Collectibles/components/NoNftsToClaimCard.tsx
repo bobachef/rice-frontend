@@ -9,7 +9,7 @@ const NoNftsToClaimCard = () => {
 
   return (
     <SecondaryCard>
-      <CardContent imgSrc="/images/present-disabled.svg">
+      <CardContent imgSrc="/images/present-disabled.png">
         <Heading mb="8px">{TranslateString(999, 'No NFTs to claim')}</Heading>
         <Text>
           {TranslateString(

@@ -5,7 +5,7 @@ import EditProfileModal from './EditProfileModal'
 import ProfileAvatar, { ProfileAvatarProps } from './ProfileAvatar'
 
 const EditOverlay = styled.div`
-  background: rgba(0, 0, 0, 0.6) url('/images/camera.svg') no-repeat center center;
+  background: rgba(0, 0, 0, 0.6) url('/images/camera.png') no-repeat center center;
   background-size: 24px;
   border-radius: 50%;
   left: 0;
