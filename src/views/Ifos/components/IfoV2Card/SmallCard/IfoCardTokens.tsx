@@ -62,7 +62,7 @@ const IfoCardTokens: React.FC<IfoCardTokensProps> = ({
     if (account && !hasProfile) {
       return (
         <Text textAlign="center">
-          {TranslateString(999, 'You need an active PancakeSwap Profile to take part in an IFO!')}
+          {TranslateString(999, 'You need an active RiceFarm Profile to take part in an IFO!')}
         </Text>
       )
     }
