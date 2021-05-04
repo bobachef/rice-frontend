@@ -13,7 +13,7 @@ const tokens = {
     },
   },
   teslasafe: {
-    symbol: 'TESLASAFE',
+    symbol: 'TeslaSafe',
     address: {
       56: '0x3504de9e61FDFf2Fc70f5cC8a6D1Ee493434C1Aa',
       97: '0x8232C3985babC3875B0d1A0f298842Bb4b83F9B0',
