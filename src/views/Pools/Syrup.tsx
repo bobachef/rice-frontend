@@ -11,7 +11,6 @@ import usePersistState from 'hooks/usePersistState'
 import { usePools, useBlock } from 'state/hooks'
 import FlexLayout from 'components/layout/Flex'
 import Page from 'components/layout/Page'
-import Coming from './components/Coming'
 import PoolCard from './components/PoolCard'
 import PoolTabButtons from './components/PoolTabButtons'
 import Divider from './components/Divider'
@@ -38,7 +37,7 @@ const Syrup: React.FC = () => {
       <Hero>
         <div>
           <Heading as="h1" size="xxl" mb="16px">
-            {TranslateString(738, 'Syrup Pool')}
+            {TranslateString(738, 'Rice Paddy')}
           </Heading>
           <ul>
             <li>{TranslateString(580, 'Stake $RICE to earn new tokens.')}</li>
@@ -46,7 +45,7 @@ const Syrup: React.FC = () => {
             <li>{TranslateString(406, 'Rewards are calculated per block.')}</li>
           </ul>
         </div>
-        <img src="/images/syrup.png" alt="SYRUP POOL icon" width={410} height={191} />
+        <img src="/images/syrup.png" alt="Rice Paddy icon" width={410} height={191} />
       </Hero>
       <PoolTabButtons stakedOnly={stakedOnly} setStakedOnly={setStakedOnly} />
       <Divider />
@@ -56,7 +55,6 @@ const Syrup: React.FC = () => {
             {stakedOnly
               ? orderBy(stakedOnlyPools, ['sortOrder']).map((pool) => <PoolCard key={pool.sousId} pool={pool} />)
               : orderBy(openPools, ['sortOrder']).map((pool) => <PoolCard key={pool.sousId} pool={pool} />)}
-            <Coming />
           </>
         </Route>
         <Route path={`${path}/history`}>
