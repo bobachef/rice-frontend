@@ -13,7 +13,7 @@ const farms: FarmConfig[] = [
     quoteToken: tokens.busd,
     depositFee: 0,
     harvestInterval: 7200,
-    lpType: 'CAKE LP v2'
+    lpType: 'CAKE LP v2',
   },
   {
     pid: 1,
@@ -25,8 +25,8 @@ const farms: FarmConfig[] = [
     token: tokens.rice,
     quoteToken: tokens.wbnb,
     depositFee: 0,
-    harvestInterval:7200,
-    lpType: 'CAKE LP v2'
+    harvestInterval: 7200,
+    lpType: 'CAKE LP v2',
   },
   {
     pid: 2,
@@ -38,8 +38,8 @@ const farms: FarmConfig[] = [
     token: tokens.teslasafe,
     quoteToken: tokens.wbnb,
     depositFee: 0,
-    harvestInterval:7200,
-    lpType: 'CAKE LP v2'
+    harvestInterval: 7200,
+    lpType: 'CAKE LP v2',
   },
   {
     pid: 3,
@@ -51,8 +51,8 @@ const farms: FarmConfig[] = [
     token: tokens.busd,
     quoteToken: tokens.wbnb,
     depositFee: 0,
-    harvestInterval:28800,
-    lpType: 'CAKE LP v2'
+    harvestInterval: 28800,
+    lpType: 'CAKE LP v2',
   },
   {
     pid: 4,
@@ -64,8 +64,8 @@ const farms: FarmConfig[] = [
     token: tokens.btcb,
     quoteToken: tokens.wbnb,
     depositFee: 0,
-    harvestInterval:28800,
-    lpType: 'CAKE LP v2'
+    harvestInterval: 28800,
+    lpType: 'CAKE LP v2',
   },
   {
     pid: 5,
@@ -77,8 +77,8 @@ const farms: FarmConfig[] = [
     token: tokens.eth,
     quoteToken: tokens.wbnb,
     depositFee: 0,
-    harvestInterval:28800,
-    lpType: 'CAKE LP v2'
+    harvestInterval: 28800,
+    lpType: 'CAKE LP v2',
   },
 ]
 
