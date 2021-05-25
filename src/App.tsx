@@ -12,6 +12,7 @@ import PageLoader from './components/PageLoader'
 import EasterEgg from './components/EasterEgg'
 import Pools from './views/Pools'
 import history from './routerHistory'
+import Ifos from './views/Ifos'
 
 // Route-based code splitting
 // Only pool is included in the main bundle because of it's the most visited page
@@ -60,6 +61,7 @@ const App: React.FC = () => {
             <Route path="/syrup">
               <Redirect to="/pools" />
             </Route>
+            <Route path="/ifo" component={Ifos} />
             {/* 404 */}
             <Route component={NotFound} />
           </Switch>

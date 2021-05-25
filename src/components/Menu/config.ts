@@ -71,6 +71,7 @@ const config: MenuEntry[] = [
       },
     ],
   },
+   */
   {
     label: 'Info',
     icon: 'InfoIcon',
@@ -98,7 +99,6 @@ const config: MenuEntry[] = [
     icon: 'IfoIcon',
     href: '/ifo',
   },
-  */
   {
     label: 'More',
     icon: 'MoreIcon',
