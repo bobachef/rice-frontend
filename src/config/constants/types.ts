@@ -10,6 +10,9 @@ export interface Token {
   address?: Address
   decimals?: number
   projectLink?: string
+  depositFee?: number
+  harvestInterval?: number
+  lpType?:string
 }
 
 export enum PoolIds {
@@ -66,6 +69,9 @@ export interface FarmConfig {
   quoteToken: Token
   multiplier?: string
   isCommunity?: boolean
+  depositFee: number
+  harvestInterval: number
+  lpType:string
   dual?: {
     rewardPerBlock: number
     earnLabel: string
