@@ -208,11 +208,15 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
         </StyledDetails>
         <StyledDetails>
           <div>{TranslateString(384, 'Deposit Fee')}:</div>
-          <Text bold fontSize="14px">{(depositFee > 0) ? `${depositFee/100}` : '0'}%</Text>
+          <Text bold fontSize="14px">
+            {depositFee > 0 ? `${depositFee / 100}` : '0'}%
+          </Text>
         </StyledDetails>
         <StyledDetails>
           <div>{TranslateString(384, 'Harvest Lockup')}:</div>
-          <Text bold fontSize="14px">{(harvestInterval > 0) ? `${harvestInterval / 60 / 60} hour(s)` : '0'}</Text>
+          <Text bold fontSize="14px">
+            {harvestInterval > 0 ? `${harvestInterval / 60 / 60} hour(s)` : '0'}
+          </Text>
         </StyledDetails>
       </div> 
       <CardFooter
