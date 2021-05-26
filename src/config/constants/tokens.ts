@@ -619,7 +619,7 @@ const tokens = {
     symbol: 'BUSD',
     address: {
       56: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
-      97: '',
+      97: '0x8301F2213c0eeD49a7E28Ae4c3e91722919B8B47',
     },
     decimals: 18,
     projectLink: 'https://www.paxos.com/busd/',
@@ -628,7 +628,7 @@ const tokens = {
     symbol: 'ETH',
     address: {
       56: '0x2170ed0880ac9a755fd29b2688956bd959f933f8',
-      97: '',
+      97: '0x98f7A83361F7Ac8765CcEBAB1425da6b341958a7',
     },
     decimals: 18,
     projectLink: 'https://ethereum.org/en/',
@@ -763,7 +763,7 @@ const tokens = {
     symbol: 'BTCB',
     address: {
       56: '0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c',
-      97: '0xE02dF9e3e622DeBdD69fb838bB799E3F168902c5',
+      97: '0xA808e341e8e723DC6BA0Bb5204Bafc2330d7B8e4', // old 0xE02dF9e3e622DeBdD69fb838bB799E3F168902c5
     },
     decimals: 18,
     projectLink: 'https://bitcoin.org/',
