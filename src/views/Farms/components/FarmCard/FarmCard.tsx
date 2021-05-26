@@ -144,6 +144,18 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, account }
         <Text>{TranslateString(318, 'Earn')}:</Text>
         <Text bold>{earnLabel}</Text>
       </Flex>
+      <Flex justifyContent="space-between">
+        <Text>{TranslateString(318, 'Deposit Fee')}:</Text>
+        <Text bold>{farm.depositFee}</Text>
+      </Flex>
+      <Flex justifyContent="space-between">
+        <Text>{TranslateString(318, 'Harvest Lockup')}:</Text>
+        <Text bold>{farm.harvestInterval}</Text>
+      </Flex>
+      <Flex justifyContent="space-between">
+        <Text>{TranslateString(318, 'LP Type')}:</Text>
+        <Text bold>{farm.lpType}</Text>
+      </Flex>
       <CardActionsContainer farm={farm} account={account} addLiquidityUrl={addLiquidityUrl} />
       <Divider />
       <ExpandableSectionButton

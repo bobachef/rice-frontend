@@ -18,7 +18,7 @@ import history from './routerHistory'
 const Home = lazy(() => import('./views/Home'))
 const Farms = lazy(() => import('./views/Farms'))
 // const Lottery = lazy(() => import('./views/Lottery'))
-// const Ifos = lazy(() => import('./views/Ifos'))
+const Ifos = lazy(() => import('./views/Ifos'))
 const NotFound = lazy(() => import('./views/NotFound'))
 // const Collectibles = lazy(() => import('./views/Collectibles'))
 // const Teams = lazy(() => import('./views/Teams'))
@@ -54,6 +54,7 @@ const App: React.FC = () => {
             <Route path="/" exact component={Home} />
             <Route path="/farms" component={Farms} />
             <Route path="/pools" component={Pools} />
+            <Route path="/ifo" component={Ifos} />
             <Route path="/staking">
               <Redirect to="/pools" />
             </Route>
