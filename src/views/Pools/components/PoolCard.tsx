@@ -214,7 +214,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
           <div>{TranslateString(384, 'Harvest Lockup')}:</div>
           <Text bold fontSize="14px">{(harvestInterval > 0) ? `${harvestInterval / 60 / 60} hour(s)` : '0'}</Text>
         </StyledDetails>
-      </div>
+      </div> 
       <CardFooter
         projectLink={earningToken.projectLink}
         decimals={stakingToken.decimals}
