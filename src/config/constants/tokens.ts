@@ -6,8 +6,8 @@ const tokens = {
   rice: {
     symbol: 'RICE',
     address: {
-      56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82', // todo: change to actual contract when deployed
-      97: '0xa35062141Fa33BCA92Ce69FeD37D0E8908868AAe', // todo: change to actual contract when deployed
+      56: '0x1f546ad641b56b86fd9dceac473d1c7a357276b7', // currently panther todo: change to actual contract when deployed
+      97: '0xeA2cE3C20184C1814D372756360F4Be7621A70Bb',
       decimals: 18,
       projectLink: 'https://ricefarm.fi/',
     },
@@ -16,7 +16,7 @@ const tokens = {
     symbol: 'TeslaSafe',
     address: {
       56: '0x3504de9e61FDFf2Fc70f5cC8a6D1Ee493434C1Aa',
-      97: '0x8232C3985babC3875B0d1A0f298842Bb4b83F9B0',
+      97: '0x4bCdd13aa5911b82dFDd873be81015a887754913',
       decimals: 9,
       projectLink: 'https://teslasafe.finance/',
     },
