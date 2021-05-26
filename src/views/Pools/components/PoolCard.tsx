@@ -1,7 +1,7 @@
 import BigNumber from 'bignumber.js'
 import React, { useCallback, useState } from 'react'
 import styled from 'styled-components'
-import { Button, IconButton, useModal, AddIcon, Image } from '@ricefarm/uikit'
+import { Button, IconButton, useModal, AddIcon, Image, Text } from '@ricefarm/uikit'
 import { useWeb3React } from '@web3-react/core'
 import UnlockButton from 'components/UnlockButton'
 import Label from 'components/Label'
@@ -37,6 +37,8 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
     sousId,
     stakingToken,
     earningToken,
+    depositFee,
+    harvestInterval,
     harvest,
     poolCategory,
     totalStaked,
@@ -203,6 +205,14 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
             isDisabled={isFinished}
             value={getBalanceNumber(stakedBalance, stakingToken.decimals)}
           />
+        </StyledDetails>
+        <StyledDetails>
+          <div>{TranslateString(384, 'Deposit Fee')}:</div>
+          <Text bold fontSize="14px">{(depositFee > 0) ? `${depositFee/100}` : '0'}%</Text>
+        </StyledDetails>
+        <StyledDetails>
+          <div>{TranslateString(384, 'Harvest Lockup')}:</div>
+          <Text bold fontSize="14px">{(harvestInterval > 0) ? `${harvestInterval / 60 / 60} hour(s)` : '0'}</Text>
         </StyledDetails>
       </div>
       <CardFooter

@@ -66,8 +66,8 @@ export interface FarmConfig {
   quoteToken: Token
   depositFee?: number
   harvestInterval?: number
-  multiplier?: string
   lpType?: string
+  multiplier?: string
   isCommunity?: boolean
   dual?: {
     rewardPerBlock: number
@@ -82,6 +82,8 @@ export interface PoolConfig {
   stakingToken: Token
   stakingLimit?: number
   contractAddress: Address
+  depositFee?: number
+  harvestInterval?: number
   poolCategory: PoolCategory
   tokenPerBlock: string
   sortOrder?: number
