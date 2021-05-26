@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom'
 import useI18n from 'hooks/useI18n'
 import BigNumber from 'bignumber.js'
 import { getFarmApr } from 'utils/apr'
-import { useFarms, usePriceCakeBusd, useGetApiPrices } from 'state/hooks'
+import { useFarms, usePriceRiceBusd, useGetApiPrices } from 'state/hooks'
 import { getAddress } from 'utils/addressHelpers'
 
 const StyledFarmStakingCard = styled(Card)`
@@ -26,7 +26,7 @@ const EarnAPRCard = () => {
   const TranslateString = useI18n()
   const farmsLP = useFarms()
   const prices = useGetApiPrices()
-  const cakePrice = usePriceCakeBusd()
+  const cakePrice = usePriceRiceBusd()
 
   const highestApr = useMemo(() => {
     const aprs = farmsLP

@@ -214,15 +214,15 @@ export const useGetApiPrice = (address: string) => {
   return prices[address.toLowerCase()]
 }
 
-export const usePriceCakeBusd = (): BigNumber => {
+export const usePriceRiceBusd = (): BigNumber => {
   const ZERO = new BigNumber(0)
-  const cakeBnbFarm = useFarmFromPid(1)
-  const bnbBusdFarm = useFarmFromPid(2)
+  const riceBnbFarm = useFarmFromPid(1)
+  const bnbBusdFarm = useFarmFromPid(3)
 
   const bnbBusdPrice = bnbBusdFarm.tokenPriceVsQuote ? new BigNumber(1).div(bnbBusdFarm.tokenPriceVsQuote) : ZERO
-  const cakeBusdPrice = cakeBnbFarm.tokenPriceVsQuote ? bnbBusdPrice.times(cakeBnbFarm.tokenPriceVsQuote) : ZERO
+  const riceBusdPrice = riceBnbFarm.tokenPriceVsQuote ? bnbBusdPrice.times(riceBnbFarm.tokenPriceVsQuote) : ZERO
 
-  return cakeBusdPrice
+  return riceBusdPrice
 }
 
 // Block
