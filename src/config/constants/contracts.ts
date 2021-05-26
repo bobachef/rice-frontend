@@ -1,7 +1,8 @@
 export default {
   masterChef: {
-    97: '0x1d32c2945C8FDCBc7156c553B7cEa4325a17f4f9',
-    56: '0x73feaa1eE314F8c655E354234017bE2193C9E24E',
+    97: '0x27E49436A00d86654c0752bf7e0feCe8e9B7b903', // original testnet 0x1d32c2945C8FDCBc7156c553B7cEa4325a17f4f9
+    56: '0x058451c62b96c594ad984370eda8b6fd7197bbd4', // panther master chef 0x058451c62b96c594ad984370eda8b6fd7197bbd4
+    // 56: '0x73feaa1eE314F8c655E354234017bE2193C9E24E', // original cake master chef
   },
   sousChef: {
     97: '0xd3af5fe61dbaf8f73149bfcfa9fb653ff096029a',
