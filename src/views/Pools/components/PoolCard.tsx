@@ -1,7 +1,7 @@
 import BigNumber from 'bignumber.js'
 import React, { useCallback, useState } from 'react'
 import styled from 'styled-components'
-import { Button, IconButton, useModal, AddIcon, Image, Text } from '@ricefarm/uikit'
+import { Button, IconButton, useModal, AddIcon, Image, Text, Tag, Flex, Heading, VerifiedIcon  } from '@ricefarm/uikit'
 import { useWeb3React } from '@web3-react/core'
 import UnlockButton from 'components/UnlockButton'
 import Label from 'components/Label'
@@ -117,30 +117,43 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
       console.error(e)
     }
   }, [onApprove, setRequestedApproval])
+  
+  const Wrapper = styled(Flex)`
+    svg {
+      margin-right: 4px;
+    }
+  `
+    const MultiplierTag = styled(Tag)`
+    margin-left: 4px;
+  `
 
   return (
     <Card isActive={isCardActive} isFinished={isFinished && sousId !== 0}>
       {isFinished && sousId !== 0 && <PoolFinishedSash />}
       <div style={{ padding: '24px' }}>
-        <CardTitle isFinished={isFinished && sousId !== 0}>
-          {isOldSyrup && '[OLD]'} {stakingToken.symbol} {TranslateString(348, 'Pool')}
-        </CardTitle>
-        <div style={{ marginBottom: '8px', display: 'flex', alignItems: 'center' }}>
-          <div style={{ flex: 1 }}>
-            <Image src={`/images/pools/${poolImage}`} alt={earningToken.symbol} width={64} height={64} />
-          </div>
-          {account && harvest && !isOldSyrup && (
-            <HarvestButton
-              disabled={!earnings.toNumber() || pendingTx}
-              text={pendingTx ? TranslateString(999, 'Collecting') : TranslateString(562, 'Harvest')}
-              onClick={async () => {
-                setPendingTx(true)
-                await onReward()
-                setPendingTx(false)
-              }}
-            />
-          )}
-        </div>
+        <Wrapper justifyContent="space-between" alignItems="center" mb="12px">
+          <Image src={`/images/pools/${poolImage}`} alt={stakingToken.symbol} width={64} height={64} />
+          <Flex flexDirection="column" alignItems="flex-end">
+            <Heading mb="4px">{stakingToken.symbol} {TranslateString(348, 'Pool')}</Heading>
+            <Flex justifyContent="center">
+              <div style={{ marginBottom: '8px', display: 'flex', alignItems: 'center' }}>
+                {account && harvest && !isOldSyrup && (
+                  <HarvestButton
+                    disabled={!earnings.toNumber() || pendingTx}
+                    text={pendingTx ? TranslateString(999, 'Collecting') : TranslateString(562, 'Harvest')}
+                    onClick={async () => {
+                      setPendingTx(true)
+                      await onReward()
+                      setPendingTx(false)
+                    }}
+                  />
+                )}
+              </div>
+            </Flex>
+          </Flex>
+        </Wrapper>
+
+
         {!isOldSyrup ? (
           <BalanceAndCompound>
             <Balance value={getBalanceNumber(earnings, earningToken.decimals)} isDisabled={isFinished} />
@@ -155,9 +168,34 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
         ) : (
           <OldSyrupTitle hasBalance={accountHasStakedBalance} />
         )}
-        <Label isFinished={isFinished && sousId !== 0} text={TranslateString(330, `${earningToken.symbol} earned`)} />
+
+        <StyledDetails>
+          <div>{TranslateString(736, 'APR')}:</div>
+          {isFinished || isOldSyrup || !apr ? (
+            '-'
+          ) : (
+            <Balance fontSize="14px" isDisabled={isFinished} value={apr} decimals={2} unit="%" />
+          )}
+        </StyledDetails>
+        <StyledDetails>
+          <div>{TranslateString(384, 'Your Stake')}:</div>
+          <Balance
+            fontSize="14px"
+            isDisabled={isFinished}
+            value={getBalanceNumber(stakedBalance, stakingToken.decimals)}
+          />
+        </StyledDetails>
+        <StyledDetails>
+          <div>{TranslateString(384, 'Deposit Fee')}:</div>
+          <Text bold fontSize="14px">{(depositFee > 0) ? `${depositFee/100}` : '0'}%</Text>
+        </StyledDetails>
+        <StyledDetails>
+          <div>{TranslateString(384, 'Harvest Lockup')}:</div>
+          <Text bold fontSize="14px">{(harvestInterval > 0) ? `${harvestInterval / 60 / 60} hour(s)` : '0'}</Text>
+        </StyledDetails>
+
         <StyledCardActions>
-          {!account && <UnlockButton />}
+          {!account && <UnlockButton width="100%" />}
           {account &&
             (needsApproval && !isOldSyrup ? (
               <div style={{ flex: 1 }}>
@@ -190,34 +228,6 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
               </>
             ))}
         </StyledCardActions>
-        <StyledDetails>
-          <div>{TranslateString(736, 'APR')}:</div>
-          {isFinished || isOldSyrup || !apr ? (
-            '-'
-          ) : (
-            <Balance fontSize="14px" isDisabled={isFinished} value={apr} decimals={2} unit="%" />
-          )}
-        </StyledDetails>
-        <StyledDetails>
-          <div>{TranslateString(384, 'Your Stake')}:</div>
-          <Balance
-            fontSize="14px"
-            isDisabled={isFinished}
-            value={getBalanceNumber(stakedBalance, stakingToken.decimals)}
-          />
-        </StyledDetails>
-        <StyledDetails>
-          <div>{TranslateString(384, 'Deposit Fee')}:</div>
-          <Text bold fontSize="14px">
-            {depositFee > 0 ? `${depositFee / 100}` : '0'}%
-          </Text>
-        </StyledDetails>
-        <StyledDetails>
-          <div>{TranslateString(384, 'Harvest Lockup')}:</div>
-          <Text bold fontSize="14px">
-            {harvestInterval > 0 ? `${harvestInterval / 60 / 60} hour(s)` : '0'}
-          </Text>
-        </StyledDetails>
       </div>
       <CardFooter
         projectLink={earningToken.projectLink}
