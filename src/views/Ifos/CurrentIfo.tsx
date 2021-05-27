@@ -14,8 +14,10 @@ const Ifo = () => {
   return (
     <IfoCardLayout>
       <IfoV2Card ifo={activeIfo} isInitiallyVisible />
+      {/*  
       <IfoSteps currency={activeIfo.currency} />
       <IfoQuestions />
+      */}
     </IfoCardLayout>
   )
 }
