@@ -80,7 +80,7 @@ const IfoCard: React.FC<IfoCardProps> = ({ ifo }) => {
           <Text fontSize="14px">{TranslateString(999, '0')}</Text>
         </Row>
         <Row>
-          <Text fontSize="14px">{TranslateString(999, 'RICE to burn (USD):')}</Text>
+          <Text fontSize="14px">{TranslateString(999, 'Teslasafe to pledge:')}</Text>
           <Text fontSize="14px">{TranslateString(999, '0')}</Text>
         </Row>
         <Row>
