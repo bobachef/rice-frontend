@@ -10,7 +10,6 @@ import Hero from './components/Hero'
 import CurrentIfo from './CurrentIfo'
 import PastIfo from './PastIfo'
 
-
 const Cards = styled(BaseLayout)`
   align-items: stretch;
   justify-content: stretch;
@@ -87,7 +86,8 @@ const Ifos = () => {
                   </CardHeader>
                   <StepCardBody>
                     <Text color="textSubtle" small mb="16px">
-                    Stake CAKE and BNB in the liquidity pool to get LP tokens. You’ll spend them to buy IFO sale tokens.
+                      Stake CAKE and BNB in the liquidity pool to get LP tokens. You’ll spend them to buy IFO sale
+                      tokens.
                     </Text>
                     <Button as={Link} href="/profile">
                       {TranslateString(999, 'Get LP tokens')}
@@ -104,7 +104,8 @@ const Ifos = () => {
                   </CardHeader>
                   <StepCardBody>
                     <Text color="textSubtle" small>
-                      When the IFO sales are live, you can “commit” your LP tokens to buy the tokens being sold. We recommend committing to the Basic Sale first, but you can do both if you want.
+                      When the IFO sales are live, you can “commit” your LP tokens to buy the tokens being sold. We
+                      recommend committing to the Basic Sale first, but you can do both if you want.
                     </Text>
                   </StepCardBody>
                 </Card>
@@ -117,7 +118,8 @@ const Ifos = () => {
                   </CardHeader>
                   <StepCardBody>
                     <Text color="textSubtle" small>
-                    After the IFO sales finish, you can claim any IFO tokens that you bought, and any unspent CAKE-BNB LP tokens will be returned to your wallet.
+                      After the IFO sales finish, you can claim any IFO tokens that you bought, and any unspent CAKE-BNB
+                      LP tokens will be returned to your wallet.
                     </Text>
                   </StepCardBody>
                 </Card>
@@ -133,7 +135,9 @@ const Ifos = () => {
                 </CardHeader>
                 <CardBody>
                   <Text color="textSubtle" small mb="16px">
-                    Launch your project with PantherSwap, Binance Smart Chain’s fastest growing AMM project and liquidity provider, to bring your token directly to the most active and rapidly growing community on BSC.
+                    Launch your project with PantherSwap, Binance Smart Chain’s fastest growing AMM project and
+                    liquidity provider, to bring your token directly to the most active and rapidly growing community on
+                    BSC.
                   </Text>
                   <Button as={Link} href="#">
                     {TranslateString(999, 'Apply to Launch')}
@@ -146,7 +150,7 @@ const Ifos = () => {
         </Route>
         <Route path={`${path}/history`}>
           <PastIfo />
-        </Route>        
+        </Route>
       </Container>
     </>
   )
