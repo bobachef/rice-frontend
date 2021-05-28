@@ -17,6 +17,31 @@ const teslaSafeBnbLpToken: Token = {
 const ifos: Ifo[] = [
   {
     id: 'rice',
+    address: '0x130D651C38D39B087d334CD32BC84beC1a2D966B',
+    isActive: true,
+    name: 'RiceFarm (RICE)',
+    poolBasic: {
+      saleAmount: '10,000,000 RICE',
+      raiseAmount: '$5,000,000',
+      cakeToBurn: '$0',
+      distributionRatio: 0.3,
+    },
+    poolUnlimited: {
+      saleAmount: '10,000,000 RICE',
+      raiseAmount: '$10,000,000',
+      cakeToBurn: '$0',
+      distributionRatio: 0.7,
+    },
+    currency: teslaSafeBnbLpToken,
+    token: tokens.rice,
+    releaseBlockNumber: 9256543,
+    campaignId: '',
+    articleUrl: '',
+    tokenOfferingPrice: 0.25,
+    isV1: true,
+  },
+  {
+    id: 'rice-ended',
     address: '0x37Be29Bd21cf264918Dc0c81AD78c60F58EF8f96',
     isActive: true,
     name: 'RiceFarm (RICE)',
