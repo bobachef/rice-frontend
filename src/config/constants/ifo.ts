@@ -17,7 +17,7 @@ const teslaSafeBnbLpToken: Token = {
 const ifos: Ifo[] = [
   {
     id: 'rice',
-    address: '0x5d028cE3435B2bB9AceBfaC599EEbA1ccD63d7dd',
+    address: '0x130D651C38D39B087d334CD32BC84beC1a2D966B',
     isActive: true,
     name: 'RiceFarm Token (RICE)',
     subTitle: 'The next evolution of AMM on Binance Smart Chain.',
