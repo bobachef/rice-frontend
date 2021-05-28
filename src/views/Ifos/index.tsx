@@ -2,13 +2,15 @@ import React from 'react'
 import styled from 'styled-components'
 import useI18n from 'hooks/useI18n'
 
-import { Text, Heading, Card, CardHeader, CardBody, CardRibbon, Image, Button, Link, BaseLayout } from '@ricefarm/uikit'
+import { Text, Heading, Card, CardHeader, CardBody, CardRibbon, Image, Button, Link, BaseLayout, OpenNewIcon } from '@ricefarm/uikit'
 import { Route, useRouteMatch } from 'react-router-dom'
 import Container from 'components/layout/Container'
 import IfoTabButtons from './components/IfoTabButtons'
 import Hero from './components/Hero'
 import CurrentIfo from './CurrentIfo'
 import PastIfo from './PastIfo'
+
+const walletId = '';
 
 const Cards = styled(BaseLayout)`
   align-items: stretch;
@@ -64,16 +66,22 @@ const Ifos = () => {
                   <CardRibbon variantColor="primary" ribbonPosition="right" text={TranslateString(999, 'Step 1')} />
                   <CardHeader>
                     <Heading size="md" color="primary">
-                      {TranslateString(999, 'Activate your Profile')}
+                      {TranslateString(999, 'Before Sale')}
                     </Heading>
                   </CardHeader>
                   <StepCardBody>
-                    <Text color="textSubtle" small mb="16px">
-                      You’ll need an active RiceFarm Profile to take part in an IFO!
+                    <Text color="textSubtle" mb="16px">
+                      <ul>
+                        <li>Buy RICE and BNB tokens</li>
+                        <li>Get RICE-BNB LP tokens by adding RICE and BNB liquidity</li>
+                      </ul>
                     </Text>
-                    <Button as={Link} href="/profile">
-                      {TranslateString(999, 'Activate you profile')}
-                    </Button>
+                    <Link external href={`https://dex.teslasafe.fi/#/swap/?outputCurrency=${walletId}`}>
+                      Buy RICE <OpenNewIcon ml="6px" />
+                    </Link>
+                    <Link external href={`https://dex.teslasafe.fi/#/add/ETH/${walletId}`}>
+                      Get LP tokens <OpenNewIcon ml="6px" />
+                    </Link>
                   </StepCardBody>
                 </Card>
 
@@ -81,17 +89,15 @@ const Ifos = () => {
                   <CardRibbon variantColor="primary" ribbonPosition="right" text={TranslateString(999, 'Step 2')} />
                   <CardHeader>
                     <Heading size="md" color="primary">
-                      {TranslateString(999, 'Get CAKE-BNB LP Tokens')}
+                      {TranslateString(999, 'During Sale')}
                     </Heading>
                   </CardHeader>
                   <StepCardBody>
-                    <Text color="textSubtle" small mb="16px">
-                      Stake CAKE and BNB in the liquidity pool to get LP tokens. You’ll spend them to buy IFO sale
-                      tokens.
+                    <Text color="textSubtle" mb="16px">
+                      <ul>
+                        <li>While the sale is live, commit your RICE-LP tokens to buy the IPO tokens</li>
+                      </ul>
                     </Text>
-                    <Button as={Link} href="/profile">
-                      {TranslateString(999, 'Get LP tokens')}
-                    </Button>
                   </StepCardBody>
                 </Card>
 
@@ -99,28 +105,19 @@ const Ifos = () => {
                   <CardRibbon variantColor="primary" ribbonPosition="right" text={TranslateString(999, 'Step 3')} />
                   <CardHeader>
                     <Heading size="md" color="primary">
-                      {TranslateString(999, 'Get CAKE-BNB LP Tokens')}
+                      {TranslateString(999, 'After Sale')}
                     </Heading>
                   </CardHeader>
                   <StepCardBody>
-                    <Text color="textSubtle" small>
-                      When the IFO sales are live, you can “commit” your LP tokens to buy the tokens being sold. We
-                      recommend committing to the Basic Sale first, but you can do both if you want.
+                    <Text color="textSubtle" mb="16px">
+                      <ul>
+                        <li>Claim the tokens you purchased, along with any unspent funds.</li>
+                        <li>Done</li>
+                      </ul>
                     </Text>
-                  </StepCardBody>
-                </Card>
-                <Card mb="24px">
-                  <CardRibbon variantColor="primary" ribbonPosition="right" text={TranslateString(999, 'Step 4')} />
-                  <CardHeader>
-                    <Heading size="md" color="primary">
-                      {TranslateString(999, 'Claim your tokens and achievement')}
-                    </Heading>
-                  </CardHeader>
-                  <StepCardBody>
-                    <Text color="textSubtle" small>
-                      After the IFO sales finish, you can claim any IFO tokens that you bought, and any unspent CAKE-BNB
-                      LP tokens will be returned to your wallet.
-                    </Text>
+                    <Button as={Link} href="/#">
+                      {TranslateString(999, 'Read More')}
+                    </Button>
                   </StepCardBody>
                 </Card>
               </CardBody>
@@ -134,8 +131,8 @@ const Ifos = () => {
                   </Heading>
                 </CardHeader>
                 <CardBody>
-                  <Text color="textSubtle" small mb="16px">
-                    Launch your project with PantherSwap, Binance Smart Chain’s fastest growing AMM project and
+                  <Text color="textSubtle" mb="16px">
+                    Launch your project with RICESwap, Binance Smart Chain’s fastest growing AMM project and
                     liquidity provider, to bring your token directly to the most active and rapidly growing community on
                     BSC.
                   </Text>
