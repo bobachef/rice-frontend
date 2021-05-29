@@ -2,7 +2,19 @@ import React from 'react'
 import styled from 'styled-components'
 import useI18n from 'hooks/useI18n'
 
-import { Text, Heading, Card, CardHeader, CardBody, CardRibbon, Image, Button, Link, BaseLayout, OpenNewIcon } from '@ricefarm/uikit'
+import {
+  Text,
+  Heading,
+  Card,
+  CardHeader,
+  CardBody,
+  CardRibbon,
+  Image,
+  Button,
+  Link,
+  BaseLayout,
+  OpenNewIcon,
+} from '@ricefarm/uikit'
 import { Route, useRouteMatch } from 'react-router-dom'
 import Container from 'components/layout/Container'
 import IfoTabButtons from './components/IfoTabButtons'
