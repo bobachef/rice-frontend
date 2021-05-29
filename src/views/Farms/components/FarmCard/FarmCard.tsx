@@ -96,7 +96,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, account }
   const [showExpandableSection, setShowExpandableSection] = useState(false)
 
   // We assume the token name is coin pair + lp e.g. CAKE-BNB LP, LINK-BNB LP,
-  // NAR-CAKE LP. The images should be cake-bnb.png, link-bnb.png, nar-cake.png
+  // NAR-CAKE LP. The images should be rice-bnb.svg, link-bnb.svg, nar-rice.svg
   const farmImage = farm.lpSymbol.split(' ')[0].toLocaleLowerCase()
 
   const totalValueFormatted = farm.liquidity
