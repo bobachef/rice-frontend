@@ -1,7 +1,7 @@
 import BigNumber from 'bignumber.js'
 import React, { useCallback, useState } from 'react'
 import styled from 'styled-components'
-import { Button, IconButton, useModal, AddIcon, Image, Text, Tag, Flex, Heading, VerifiedIcon  } from '@ricefarm/uikit'
+import { Button, IconButton, useModal, AddIcon, Image, Text, Tag, Flex, Heading, VerifiedIcon } from '@ricefarm/uikit'
 import { useWeb3React } from '@web3-react/core'
 import UnlockButton from 'components/UnlockButton'
 import Label from 'components/Label'
@@ -117,13 +117,13 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
       console.error(e)
     }
   }, [onApprove, setRequestedApproval])
-  
+
   const Wrapper = styled(Flex)`
     svg {
       margin-right: 4px;
     }
   `
-    const MultiplierTag = styled(Tag)`
+  const MultiplierTag = styled(Tag)`
     margin-left: 4px;
   `
 
@@ -134,7 +134,9 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
         <Wrapper justifyContent="space-between" alignItems="center" mb="12px">
           <Image src={`/images/pools/${poolImage}`} alt={stakingToken.symbol} width={64} height={64} />
           <Flex flexDirection="column" alignItems="flex-end">
-            <Heading mb="4px">{stakingToken.symbol} {TranslateString(348, 'Pool')}</Heading>
+            <Heading mb="4px">
+              {stakingToken.symbol} {TranslateString(348, 'Pool')}
+            </Heading>
             <Flex justifyContent="center">
               <div style={{ marginBottom: '8px', display: 'flex', alignItems: 'center' }}>
                 {account && harvest && !isOldSyrup && (
@@ -152,7 +154,6 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
             </Flex>
           </Flex>
         </Wrapper>
-
 
         {!isOldSyrup ? (
           <BalanceAndCompound>
@@ -187,11 +188,15 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
         </StyledDetails>
         <StyledDetails>
           <div>{TranslateString(384, 'Deposit Fee')}:</div>
-          <Text bold fontSize="14px">{(depositFee > 0) ? `${depositFee/100}` : '0'}%</Text>
+          <Text bold fontSize="14px">
+            {depositFee > 0 ? `${depositFee / 100}` : '0'}%
+          </Text>
         </StyledDetails>
         <StyledDetails>
           <div>{TranslateString(384, 'Harvest Lockup')}:</div>
-          <Text bold fontSize="14px">{(harvestInterval > 0) ? `${harvestInterval / 60 / 60} hour(s)` : '0'}</Text>
+          <Text bold fontSize="14px">
+            {harvestInterval > 0 ? `${harvestInterval / 60 / 60} hour(s)` : '0'}
+          </Text>
         </StyledDetails>
 
         <StyledCardActions>

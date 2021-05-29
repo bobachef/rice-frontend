@@ -33,7 +33,7 @@ const Hero = () => {
       <StyledHero>
         <Container>
           <Heading as="h1" size="xl" mb="24px">
-            {TranslateString(500, 'IFO: Initial Farm Offerings')}
+            {TranslateString(500, 'IFO: Initial RiceFarm Offerings')}
           </Heading>
           <Text bold fontSize="20px">
             {TranslateString(502, 'Buy new tokens with a brand new token sale model.')}

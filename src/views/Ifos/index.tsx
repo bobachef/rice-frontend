@@ -10,7 +10,7 @@ import Hero from './components/Hero'
 import CurrentIfo from './CurrentIfo'
 import PastIfo from './PastIfo'
 
-const walletId = '';
+const walletId = ''
 
 const Cards = styled(BaseLayout)`
   align-items: stretch;
@@ -72,14 +72,14 @@ const Ifos = () => {
                   <StepCardBody>
                     <Text color="textSubtle" mb="16px">
                       <ul>
-                        <li>Buy RICE and BNB tokens</li>
-                        <li>Get RICE-BNB LP tokens by adding RICE and BNB liquidity</li>
+                        <li>Buy TeslaSafe and BNB tokens</li>
+                        <li>Get TeslaSafe-BNB LP tokens by adding TeslaSafe and BNB liquidity</li>
                       </ul>
                     </Text>
-                    <Link external href={`https://dex.teslasafe.fi/#/swap/?outputCurrency=${walletId}`}>
-                      Buy RICE <OpenNewIcon ml="6px" />
+                    <Link external href={`https://teslasafe.ricefarm.fi/#/swap/?outputCurrency=${walletId}`}>
+                      Buy TeslaSafe <OpenNewIcon ml="6px" />
                     </Link>
-                    <Link external href={`https://dex.teslasafe.fi/#/add/ETH/${walletId}`}>
+                    <Link external href={`https://teslasafe.ricefarm.fi/#/add/ETH/${walletId}`}>
                       Get LP tokens <OpenNewIcon ml="6px" />
                     </Link>
                   </StepCardBody>
@@ -95,7 +95,7 @@ const Ifos = () => {
                   <StepCardBody>
                     <Text color="textSubtle" mb="16px">
                       <ul>
-                        <li>While the sale is live, commit your RICE-LP tokens to buy the IPO tokens</li>
+                        <li>While the sale is live, commit your TeslaSafe-LP tokens to buy the IFO tokens</li>
                       </ul>
                     </Text>
                   </StepCardBody>
@@ -132,16 +132,15 @@ const Ifos = () => {
                 </CardHeader>
                 <CardBody>
                   <Text color="textSubtle" mb="16px">
-                    Launch your project with RICESwap, Binance Smart Chain’s fastest growing AMM project and
-                    liquidity provider, to bring your token directly to the most active and rapidly growing community on
-                    BSC.
+                    Launch your project with RiceFarm, Binance Smart Chain’s fastest growing AMM project and liquidity
+                    provider, to bring your token directly to the most active and rapidly growing community on BSC.
                   </Text>
                   <Button as={Link} href="#">
                     {TranslateString(999, 'Apply to Launch')}
                   </Button>
                 </CardBody>
               </Card>
-              <Image mx="auto" src="/images/logo.png" alt="RICE Farm" width={128} height={128} />
+              <Image mx="auto" src="/images/logo.png" alt="Rice Farm" width={128} height={128} />
             </div>
           </Cards>
         </Route>

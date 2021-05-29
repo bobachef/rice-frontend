@@ -27,7 +27,7 @@ const ContributeButton: React.FC<Props> = ({ poolId, ifo, publicIfoData, walletI
   const userCurrencyBalance = useTokenBalance(getAddress(ifo.currency.address))
 
   const handleContributeSuccess = (amount: BigNumber) => {
-    toastSuccess('Success!', `You have contributed ${getBalanceNumber(amount)} CAKE-BNB LP tokens to this IFO!`)
+    toastSuccess('Success!', `You have contributed ${getBalanceNumber(amount)} TeslaSafe-BNB LP tokens to this IFO!`)
     walletIfoData.addUserContributedAmount(amount, poolId)
   }
 

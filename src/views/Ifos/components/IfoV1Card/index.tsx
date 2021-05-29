@@ -44,7 +44,6 @@ const Row = styled.div`
   margin-bottom: 8px;
 `
 
-
 const IfoCard: React.FC<IfoCardProps> = ({ ifo }) => {
   const publicIfoData = useGetPublicIfoData(ifo)
   const walletIfoData = useGetWalletIfoData(ifo)
@@ -65,11 +64,11 @@ const IfoCard: React.FC<IfoCardProps> = ({ ifo }) => {
         <Row>
           <Text fontSize="14px">{TranslateString(999, 'Launch Time:')}</Text>
           <IfoCardTime
-              status={publicIfoData.status}
-              secondsUntilStart={publicIfoData.secondsUntilStart}
-              secondsUntilEnd={publicIfoData.secondsUntilEnd}
-              block={publicIfoData.startBlockNum}
-            />
+            status={publicIfoData.status}
+            secondsUntilStart={publicIfoData.secondsUntilStart}
+            secondsUntilEnd={publicIfoData.secondsUntilEnd}
+            block={publicIfoData.startBlockNum}
+          />
         </Row>
         <Row>
           <Text fontSize="14px">{TranslateString(999, 'For Sale:')}</Text>
@@ -100,7 +99,6 @@ const IfoCard: React.FC<IfoCardProps> = ({ ifo }) => {
           </>
         )}
         */}
-        
       </CardBody>
       <IfoCardDetails ifo={ifo} publicIfoData={publicIfoData} />
     </StyledIfoCard>
