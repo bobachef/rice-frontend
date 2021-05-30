@@ -88,10 +88,10 @@ const Ifos = () => {
                         <li>Get TeslaSafe-BNB LP tokens by adding TeslaSafe and BNB liquidity</li>
                       </ul>
                     </Text>
-                    <Link external href={`https://teslasafe.ricefarm.fi/#/swap/?outputCurrency=${walletId}`}>
+                    <Link external href='https://teslasafe.ricefarm.fi/#/swap'>
                       Buy TeslaSafe <OpenNewIcon ml="6px" />
                     </Link>
-                    <Link external href={`https://teslasafe.ricefarm.fi/#/add/ETH/${walletId}`}>
+                    <Link external href='https://teslasafe.ricefarm.fi/#/add/BNB/0x3504de9e61FDFf2Fc70f5cC8a6D1Ee493434C1Aa'>
                       Get LP tokens <OpenNewIcon ml="6px" />
                     </Link>
                   </StepCardBody>
