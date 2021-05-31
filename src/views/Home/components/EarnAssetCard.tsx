@@ -7,7 +7,7 @@ import pools from 'config/constants/pools'
 import { Pool } from 'state/types'
 
 const StyledFarmStakingCard = styled(Card)`
-  background: linear-gradient(#53dee9, #7645d9);
+  background: linear-gradient(#a6f957, #00b628);
   margin-left: auto;
   margin-right: auto;
   width: 100%;
@@ -22,8 +22,8 @@ const CardMidContent = styled(Heading).attrs({ size: 'xl' })`
 const EarnAssetCard = () => {
   const activeNonCakePools = pools.filter((pool) => !pool.isFinished && !pool.earningToken.symbol.includes('CAKE'))
   const latestPools: Pool[] = orderBy(activeNonCakePools, ['sortOrder', 'pid'], ['desc', 'desc']).slice(0, 3)
-  // Always include CAKE
-  const assets = ['CAKE', ...latestPools.map((pool) => pool.earningToken.symbol)].join(', ')
+  // Always include Rice
+  const assets = ['RICE', ...latestPools.map((pool) => pool.earningToken.symbol)].join(', ')
 
   return (
     <StyledFarmStakingCard>

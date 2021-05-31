@@ -2,9 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 import { Heading, Text, BaseLayout } from '@ricefarm/uikit'
 import useI18n from 'hooks/useI18n'
+
 import Page from 'components/layout/Page'
 import FarmStakingCard from 'views/Home/components/FarmStakingCard'
 import LotteryCard from 'views/Home/components/LotteryCard'
+import TwitterCard from 'views/Home/components/TwitterCard'
 import CakeStats from 'views/Home/components/CakeStats'
 import TotalValueLockedCard from 'views/Home/components/TotalValueLockedCard'
 import EarnAPRCard from 'views/Home/components/EarnAPRCard'
@@ -13,7 +15,7 @@ import WinCard from 'views/Home/components/WinCard'
 
 const Hero = styled.div`
   align-items: center;
-  background-image: url('/images/pan-bg-mobile.svg');
+  background-image: url('/images/pan-bg-mobile.png');
   background-repeat: no-repeat;
   background-position: top center;
   display: flex;
@@ -25,8 +27,9 @@ const Hero = styled.div`
   text-align: center;
 
   ${({ theme }) => theme.mediaQueries.lg} {
-    background-image: url('/images/pan-bg2.svg'), url('/images/pan-bg.svg');
+    background-image: url('/images/pan-bg2.png'), url('/images/pan-bg.png');
     background-position: left center, right center;
+    background-size: contain, contain;
     height: 165px;
     padding-top: 0;
   }
@@ -83,20 +86,25 @@ const Home: React.FC = () => {
     <Page>
       <Hero>
         <Heading as="h1" size="xl" mb="24px" color="secondary">
-          {TranslateString(576, 'PancakeSwap')}
+          {TranslateString(576, 'Rice Farm')}
         </Heading>
         <Text>{TranslateString(578, 'The #1 AMM and yield farm on Binance Smart Chain.')}</Text>
       </Hero>
       <div>
         <Cards>
           <FarmStakingCard />
-          <LotteryCard />
+          <TwitterCard />
         </Cards>
-        <CTACards>
+        <Cards>
+          <EarnAPRCard />
+          <EarnAssetCard />
+        </Cards>
+        {/* <CTACards>
           <EarnAPRCard />
           <EarnAssetCard />
           <WinCard />
-        </CTACards>
+        </CTACards> */}
+
         <Cards>
           <CakeStats />
           <TotalValueLockedCard />

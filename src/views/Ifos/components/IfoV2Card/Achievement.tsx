@@ -37,7 +37,7 @@ const Achievement: React.FC<Props> = ({ ifo, publicIfoData }) => {
   return (
     <Container>
       <Flex alignItems="center" flexGrow={1}>
-        <Image src={`/images/achievements/ifo-${tokenName}.svg`} width={56} height={56} mr="8px" />
+        <Image src={`/images/achievements/ifo-${tokenName}.png`} width={56} height={56} mr="8px" />
         <Flex flexDirection="column">
           <Text color="secondary" fontSize="12px">
             {TranslateString(999, 'Achievement:')}

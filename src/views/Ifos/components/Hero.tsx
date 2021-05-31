@@ -6,10 +6,10 @@ import useI18n from 'hooks/useI18n'
 
 const getGradient = (isDark: boolean) => {
   if (isDark) {
-    return 'repeating-linear-gradient(to right, #332453, #332453 40px, #281D44 40px, #281D44 80px)'
+    return 'repeating-linear-gradient(to right, #3b5324, #3b5324 40px, #24441d 40px, #24441d 80px)'
   }
 
-  return 'repeating-linear-gradient(to right, #21d4e2, #21d4e2 40px, #53dee9 40px, #53dee9 80px)'
+  return 'repeating-linear-gradient(to right, #6ee221, #6ee221 40px, #7ae953 40px, #7ae953 80px)'
 }
 
 const StyledHero = styled.div`
@@ -33,7 +33,7 @@ const Hero = () => {
       <StyledHero>
         <Container>
           <Heading as="h1" size="xl" mb="24px">
-            {TranslateString(500, 'IFO: Initial Farm Offerings')}
+            {TranslateString(500, 'IFO: Initial RiceFarm Offerings')}
           </Heading>
           <Text bold fontSize="20px">
             {TranslateString(502, 'Buy new tokens with a brand new token sale model.')}

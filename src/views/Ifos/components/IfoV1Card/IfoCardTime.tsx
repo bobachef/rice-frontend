@@ -17,14 +17,14 @@ const Details = styled.div`
   display: flex;
   height: 24px;
   justify-content: center;
-  margin-bottom: 24px;
+  margin-bottom: 0px;
 `
 
 const Countdown = styled.div`
   color: ${({ theme }) => theme.colors.secondary};
-  font-size: 20px;
-  font-weight: 600;
-  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: right;
 `
 
 const IfoCardTime: React.FC<IfoCardTimeProps> = ({ status, secondsUntilStart, secondsUntilEnd, block }) => {
@@ -35,7 +35,7 @@ const IfoCardTime: React.FC<IfoCardTimeProps> = ({ status, secondsUntilStart, se
 
   if (status === 'idle') {
     return (
-      <Flex alignItems="center" justifyContent="center" mb="24px" height="24px">
+      <Flex alignItems="center" justifyContent="center">
         {TranslateString(656, 'Loading...')}
       </Flex>
     )

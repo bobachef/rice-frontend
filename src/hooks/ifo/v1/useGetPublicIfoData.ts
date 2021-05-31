@@ -34,6 +34,10 @@ const getStatus = (currentBlock: number, startBlock: number, endBlock: number): 
  */
 const useGetPublicIfoData = (ifo: Ifo): PublicIfoData => {
   const { address, releaseBlockNumber } = ifo
+
+  console.log('address:', address)
+  console.log('release block number:', releaseBlockNumber)
+
   const [state, setState] = useState<PublicIfoData>({
     status: 'idle',
     blocksRemaining: 0,

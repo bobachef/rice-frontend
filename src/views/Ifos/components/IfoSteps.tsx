@@ -51,7 +51,7 @@ const IfoSteps: React.FC<Props> = ({ currency }) => {
               Activate your Profile
             </Heading>
             <Text color="textSubtle" small mb="16px">
-              You’ll need an active PancakeSwap Profile to take part in an IFO!
+              You’ll need an active RiceFarm Profile to take part in an IFO!
             </Text>
             {isStepValid ? (
               <Text color="success" bold>

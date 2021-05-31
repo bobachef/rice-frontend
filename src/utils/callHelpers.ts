@@ -8,17 +8,21 @@ export const approve = async (lpContract, masterChefContract, account) => {
 }
 
 export const stake = async (masterChefContract, pid, amount, account) => {
-  if (pid === 0) {
-    return masterChefContract.methods
-      .enterStaking(new BigNumber(amount).times(new BigNumber(10).pow(18)).toString())
-      .send({ from: account, gas: 200000 })
-      .on('transactionHash', (tx) => {
-        return tx.transactionHash
-      })
-  }
+  // todo: we don't have stake method
+  // if (pid === 0) {
+  //   return masterChefContract.methods
+  //     .enterStaking(new BigNumber(amount).times(new BigNumber(10).pow(18)).toString())
+  //     .send({ from: account, gas: 200000 })
+  //     .on('transactionHash', (tx) => {
+  //       return tx.transactionHash
+  //     })
+  // }
+
+  // todo: add referrer logic
+  const DEFAULT_REFERRER = '0xDdA752b218cA661F047eDdBDb6A3B713d5eb997d'
 
   return masterChefContract.methods
-    .deposit(pid, new BigNumber(amount).times(new BigNumber(10).pow(18)).toString())
+    .deposit(pid, new BigNumber(amount).times(new BigNumber(10).pow(18)).toString(), DEFAULT_REFERRER)
     .send({ from: account, gas: 200000 })
     .on('transactionHash', (tx) => {
       return tx.transactionHash

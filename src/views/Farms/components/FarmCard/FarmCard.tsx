@@ -96,7 +96,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, account }
   const [showExpandableSection, setShowExpandableSection] = useState(false)
 
   // We assume the token name is coin pair + lp e.g. CAKE-BNB LP, LINK-BNB LP,
-  // NAR-CAKE LP. The images should be cake-bnb.svg, link-bnb.svg, nar-cake.svg
+  // NAR-CAKE LP. The images should be rice-bnb.svg, link-bnb.svg, nar-rice.svg
   const farmImage = farm.lpSymbol.split(' ')[0].toLocaleLowerCase()
 
   const totalValueFormatted = farm.liquidity
@@ -104,7 +104,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, account }
     : '-'
 
   const lpLabel = farm.lpSymbol && farm.lpSymbol.toUpperCase().replace('PANCAKE', '')
-  const earnLabel = farm.dual ? farm.dual.earnLabel : 'CAKE'
+  const earnLabel = farm.dual ? farm.dual.earnLabel : 'RICE'
 
   const farmAPR = farm.apr && farm.apr.toLocaleString('en-US', { maximumFractionDigits: 2 })
 
@@ -117,7 +117,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, account }
 
   return (
     <FCard>
-      {farm.token.symbol === 'CAKE' && <StyledCardAccent />}
+      {farm.token.symbol === 'RICE' && <StyledCardAccent />}
       <CardHeading
         lpLabel={lpLabel}
         multiplier={farm.multiplier}
@@ -144,6 +144,15 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, account }
         <Text>{TranslateString(318, 'Earn')}:</Text>
         <Text bold>{earnLabel}</Text>
       </Flex>
+      <Flex justifyContent="space-between">
+        <Text>{TranslateString(318, 'Deposit Fee')}:</Text>
+        <Text bold>{farm.depositFee}</Text>
+      </Flex>
+      <Flex justifyContent="space-between">
+        <Text>{TranslateString(318, 'Harvest Lockup')}:</Text>
+        <Text bold>{farm.harvestInterval > 0 ? `${farm.harvestInterval / 60 / 60} hour(s)` : '0'}</Text>
+      </Flex>
+
       <CardActionsContainer farm={farm} account={account} addLiquidityUrl={addLiquidityUrl} />
       <Divider />
       <ExpandableSectionButton

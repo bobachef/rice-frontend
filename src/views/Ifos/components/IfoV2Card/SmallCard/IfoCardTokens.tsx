@@ -62,14 +62,14 @@ const IfoCardTokens: React.FC<IfoCardTokensProps> = ({
     if (account && !hasProfile) {
       return (
         <Text textAlign="center">
-          {TranslateString(999, 'You need an active PancakeSwap Profile to take part in an IFO!')}
+          {TranslateString(999, 'You need an active RiceFarm Profile to take part in an IFO!')}
         </Text>
       )
     }
     if (publicIfoData.status === 'coming_soon') {
       return (
         <>
-          <TokenSection img="/images/bunny-placeholder.svg">
+          <TokenSection img="/images/bunny-placeholder.png">
             <Label>{TranslateString(999, 'On sale')}</Label>
             <Value>{ifo[poolId].saleAmount}</Value>
           </TokenSection>
@@ -80,7 +80,7 @@ const IfoCardTokens: React.FC<IfoCardTokensProps> = ({
     if (publicIfoData.status === 'live') {
       return (
         <>
-          <TokenSection img="/images/farms/cake-bnb.svg" mb="24px">
+          <TokenSection img="/images/farms/cake-bnb.png" mb="24px">
             <Label>{`Your ${currency.symbol} committed`}</Label>
             <Value>{getBalanceNumber(userPoolCharacteristics.amountTokenCommittedInLP, currency.decimals)}</Value>
             <PercentageOfTotal
@@ -88,7 +88,7 @@ const IfoCardTokens: React.FC<IfoCardTokensProps> = ({
               totalAmount={publicPoolCharacteristics.totalAmountPool}
             />
           </TokenSection>
-          <TokenSection img={`/images/ifos/${ifo.id}.svg`}>
+          <TokenSection img={`/images/ifos/${ifo.id}.png`}>
             <Label>{`${token.symbol} to receive`}</Label>
             <Value>{getBalanceNumber(userPoolCharacteristics.offeringAmountInToken, token.decimals)}</Value>
           </TokenSection>
@@ -98,12 +98,12 @@ const IfoCardTokens: React.FC<IfoCardTokensProps> = ({
     if (publicIfoData.status === 'finished') {
       return userPoolCharacteristics.amountTokenCommittedInLP.isEqualTo(0) ? (
         <Flex flexDirection="column" alignItems="center">
-          <Image src="/images/bunny-placeholder.svg" width={80} height={80} mb="16px" />
+          <Image src="/images/bunny-placeholder.png" width={80} height={80} mb="16px" />
           <Text>{TranslateString(999, 'You didn’t participate in this sale!')}</Text>
         </Flex>
       ) : (
         <>
-          <TokenSection img="/images/farms/cake-bnb.svg" mb="24px">
+          <TokenSection img="/images/farms/cake-bnb.png" mb="24px">
             <Label>{hasClaimed ? `Your ${currency.symbol} RECLAIMED` : `Your ${currency.symbol} TO RECLAIM`}</Label>
             <Flex alignItems="center">
               <Value>{getBalanceNumber(userPoolCharacteristics.refundingAmountInLP, currency.decimals)}</Value>
@@ -114,7 +114,7 @@ const IfoCardTokens: React.FC<IfoCardTokensProps> = ({
               totalAmount={publicPoolCharacteristics.totalAmountPool}
             />
           </TokenSection>
-          <TokenSection img={`/images/ifos/${ifo.id}.svg`}>
+          <TokenSection img={`/images/ifos/${ifo.id}.png`}>
             <Label>{hasClaimed ? `${token.symbol} received` : `${token.symbol} to received`}</Label>
             <Flex alignItems="center">
               <Value>{getBalanceNumber(userPoolCharacteristics.offeringAmountInToken, token.decimals)}</Value>

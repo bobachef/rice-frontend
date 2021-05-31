@@ -64,6 +64,9 @@ export interface FarmConfig {
   lpAddresses: Address
   token: Token
   quoteToken: Token
+  depositFee?: number
+  harvestInterval?: number
+  lpType?: string
   multiplier?: string
   isCommunity?: boolean
   dual?: {
@@ -79,6 +82,8 @@ export interface PoolConfig {
   stakingToken: Token
   stakingLimit?: number
   contractAddress: Address
+  depositFee?: number
+  harvestInterval?: number
   poolCategory: PoolCategory
   tokenPerBlock: string
   sortOrder?: number

@@ -3,6 +3,9 @@
 # ide
 .idea
 
+# since we're using yarn
+package-lock.json
+
 # dependencies
 /node_modules
 /.pnp
@@ -34,4 +37,3 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 debug.log*
-
