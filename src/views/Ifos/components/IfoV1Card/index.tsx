@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Card, CardBody, CardRibbon, Box, Progress, Text } from '@ricefarm/uikit'
+import { Card, CardBody, CardRibbon, Box, Progress, Text, LinkExternal } from '@ricefarm/uikit'
 import { Ifo, IfoStatus } from 'config/constants/types'
 import useI18n from 'hooks/useI18n'
 import useGetPublicIfoData from 'hooks/ifo/v1/useGetPublicIfoData'
@@ -48,6 +48,8 @@ const IfoCard: React.FC<IfoCardProps> = ({ ifo }) => {
   const publicIfoData = useGetPublicIfoData(ifo)
   const walletIfoData = useGetWalletIfoData(ifo)
   const TranslateString = useI18n()
+  const { description, cakeToBurn, projectSiteUrl, launchDate, launchTime, saleAmount, raiseAmount } = ifo
+  const { raisingAmount, totalAmount } = publicIfoData
 
   const { id, name, subTitle } = ifo
   const Ribbon = getRibbonComponent(publicIfoData.status, TranslateString)
@@ -72,19 +74,21 @@ const IfoCard: React.FC<IfoCardProps> = ({ ifo }) => {
         </Row>
         <Row>
           <Text fontSize="14px">{TranslateString(999, 'For Sale:')}</Text>
-          <Text fontSize="14px">{TranslateString(999, '0')}</Text>
+          <Text fontSize="14px">{saleAmount}</Text>
         </Row>
         <Row>
           <Text fontSize="14px">{TranslateString(999, 'To raise (USD):')}</Text>
-          <Text fontSize="14px">{TranslateString(999, '0')}</Text>
+          <Text fontSize="14px">{raiseAmount}</Text>
         </Row>
         <Row>
           <Text fontSize="14px">{TranslateString(999, 'Teslasafe to pledge:')}</Text>
-          <Text fontSize="14px">{TranslateString(999, '0')}</Text>
+          <Text fontSize="14px">{cakeToBurn}</Text>
         </Row>
         <Row>
           <Text fontSize="14px">{TranslateString(999, 'Total raised (% of target):')}</Text>
-          <Text fontSize="14px">{TranslateString(999, '0')}</Text>
+          <Text fontSize="14px">
+            {`${totalAmount.div(raisingAmount).times(100).toFixed(2)}%`}
+          </Text>
         </Row>
         {/*  
         {publicIfoData.status !== 'finished' && ifo.isActive && (

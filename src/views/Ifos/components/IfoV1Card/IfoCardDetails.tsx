@@ -44,6 +44,7 @@ const IfoCardDetails: React.FC<IfoCardDetailsProps> = ({ ifo, publicIfoData }) =
           <Text as="p" color="textSubtle" my="24px">
             {description}
           </Text>
+          {/*  
           <Box mb="24px">
             <Item>
               <Display>{TranslateString(582, 'Launch Time')}</Display>
@@ -77,11 +78,12 @@ const IfoCardDetails: React.FC<IfoCardDetailsProps> = ({ ifo, publicIfoData }) =
               <Text>{`${totalAmount.div(raisingAmount).times(100).toFixed(2)}%`}</Text>
             </Item>
           </Box>
-          <LinkExternal href={projectSiteUrl} style={{ margin: 'auto' }}>
-            {TranslateString(412, 'View project site')}
-          </LinkExternal>
+          */}
         </>
       )}
+      <LinkExternal href={projectSiteUrl} style={{ margin: 'auto' }}>
+        {TranslateString(412, 'View project site')}
+      </LinkExternal>
     </CardFooter>
   )
 }
