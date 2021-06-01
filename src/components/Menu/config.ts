@@ -8,16 +8,16 @@ const config: MenuEntry[] = [
   },
 
   {
-    label: 'Trade',
+    label: 'TeslaSafe Swap',
     icon: 'TradeIcon',
     items: [
       {
         label: 'Exchange',
-        href: 'https://exchange.pancakeswap.finance',
+        href: 'https://teslasafe.ricefarm.fi',
       },
       {
         label: 'Liquidity',
-        href: 'https://exchange.pancakeswap.finance/#/pool',
+        href: 'https://teslasafe.ricefarm.fi/#/pool',
       },
     ],
   },
@@ -72,32 +72,37 @@ const config: MenuEntry[] = [
     ],
   },
    */
-  {
-    label: 'Info',
-    icon: 'InfoIcon',
-    items: [
-      {
-        label: 'Overview',
-        href: 'https://pancakeswap.info',
-      },
-      {
-        label: 'Tokens',
-        href: 'https://pancakeswap.info/tokens',
-      },
-      {
-        label: 'Pairs',
-        href: 'https://pancakeswap.info/pairs',
-      },
-      {
-        label: 'Accounts',
-        href: 'https://pancakeswap.info/accounts',
-      },
-    ],
-  },
+  // {
+  //   label: 'Info',
+  //   icon: 'InfoIcon',
+  //   items: [
+  //     {
+  //       label: 'Overview',
+  //       href: 'https://pancakeswap.info',
+  //     },
+  //     {
+  //       label: 'Tokens',
+  //       href: 'https://pancakeswap.info/tokens',
+  //     },
+  //     {
+  //       label: 'Pairs',
+  //       href: 'https://pancakeswap.info/pairs',
+  //     },
+  //     {
+  //       label: 'Accounts',
+  //       href: 'https://pancakeswap.info/accounts',
+  //     },
+  //   ],
+  // },
   {
     label: 'IFO',
     icon: 'IfoIcon',
     href: '/ifo',
+  },
+  {
+    label: 'Referrals',
+    icon: 'ReferralIcon',
+    href: '/referrals',
   },
   {
     label: 'More',

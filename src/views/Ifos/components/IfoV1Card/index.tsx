@@ -86,9 +86,7 @@ const IfoCard: React.FC<IfoCardProps> = ({ ifo }) => {
         </Row>
         <Row>
           <Text fontSize="14px">{TranslateString(999, 'Total raised (% of target):')}</Text>
-          <Text fontSize="14px">
-            {`${totalAmount.div(raisingAmount).times(100).toFixed(2)}%`}
-          </Text>
+          <Text fontSize="14px">{`${totalAmount.div(raisingAmount).times(100).toFixed(2)}%`}</Text>
         </Row>
         {/*  
         {publicIfoData.status !== 'finished' && ifo.isActive && (

@@ -19,7 +19,7 @@ import {
   getClaimRefundAddress,
   getTradingCompetitionAddress,
   getEasterNftAddress,
-  getRiceReferralAddress
+  getRiceReferralAddress,
 } from 'utils/addressHelpers'
 
 // ABI

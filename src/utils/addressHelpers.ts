@@ -53,4 +53,3 @@ export const getEasterNftAddress = () => {
 export const getRiceReferralAddress = () => {
   return getAddress(addresses.riceReferral)
 }
-

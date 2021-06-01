@@ -18,7 +18,7 @@ import {
   getTradingCompetitionContract,
   getEasterNftContract,
   getErc721Contract,
-  getReferralContract
+  getReferralContract,
 } from 'utils/contractHelpers'
 
 /**
