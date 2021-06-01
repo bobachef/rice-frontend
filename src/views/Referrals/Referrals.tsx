@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import useI18n from 'hooks/useI18n'
 import { useWeb3React } from '@web3-react/core'
@@ -19,8 +19,8 @@ import {
 } from '@ricefarm/uikit'
 import { Route, useRouteMatch } from 'react-router-dom'
 import Container from 'components/layout/Container'
-import {BASE_URL} from '../../config'
-import useGetReferralData from "../../hooks/referrals/useGetReferralData";
+import { BASE_URL } from '../../config'
+import useGetReferralData from '../../hooks/referrals/useGetReferralData'
 
 const Cards = styled(BaseLayout)`
   align-items: stretch;
@@ -73,36 +73,7 @@ const Referrals = () => {
   const { account } = useWeb3React()
 
   if (!account) {
-    return  (
-        <>
-          <Box mb="32px">
-            <StyledHero>
-              <Container>
-                <Heading as="h1" size="xl" mb="24px">
-                  {TranslateString(500, 'RiceFarm Referral Program')}
-                </Heading>
-                <Text bold fontSize="20px">
-                  {TranslateString(502, 'Share the referral link below to invite your friends and earn 1% of your friends\' earnings FOREVER!')}
-                </Text>
-              </Container>
-            </StyledHero>
-            <CurtainBottom />
-          </Box>
-          <Container>
-            <Card>
-              <CardBody>
-                <Text textAlign="center" mb="16px">
-                  <UnlockButton mx="auto" />
-                </Text>
-                <Text textAlign="center" bold fontSize="20px">Unlock wallet to get your unique referral link</Text>
-              </CardBody>
-            </Card>
-          </Container>
-        </>
-    )
-  }
-
-  return (
+    return (
       <>
         <Box mb="32px">
           <StyledHero>
@@ -111,54 +82,91 @@ const Referrals = () => {
                 {TranslateString(500, 'RiceFarm Referral Program')}
               </Heading>
               <Text bold fontSize="20px">
-                {TranslateString(502, 'Share the referral link below to invite your friends and earn 1% of your friends\' earnings FOREVER!')}
+                {TranslateString(
+                  502,
+                  "Share the referral link below to invite your friends and earn 1% of your friends' earnings FOREVER!",
+                )}
               </Text>
             </Container>
           </StyledHero>
           <CurtainBottom />
         </Box>
         <Container>
-          <Cards>
-            <Card>
-              <CardHeader>
-                <Heading size="lg" color="secondary">
-                  {TranslateString(999, `Total Referrals`)}
-                </Heading>
-              </CardHeader>
-              <CardBody>
-                <Text textAlign="left" mb="16px">
-                  { referralData.totalReferrals }
-                </Text>
-              </CardBody>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <Heading size="lg" color="secondary">
-                  {TranslateString(999, `Total Referral Commission`)}
-                </Heading>
-              </CardHeader>
-              <CardBody>
-                <Text textAlign="left" mb="16px">
-                  {referralData.totalReferralCommissions} RICE
-                </Text>
-              </CardBody>
-            </Card>
-          </Cards>
           <Card>
-            <CardHeader>
-              <Heading size="lg" color="secondary">
-                {TranslateString(999, `Your Referral Link`)}
-              </Heading>
-            </CardHeader>
             <CardBody>
               <Text textAlign="center" mb="16px">
-                {`${BASE_URL}/?ref=${account}`}
+                <UnlockButton mx="auto" />
+              </Text>
+              <Text textAlign="center" bold fontSize="20px">
+                Unlock wallet to get your unique referral link
               </Text>
             </CardBody>
           </Card>
         </Container>
       </>
+    )
+  }
+
+  return (
+    <>
+      <Box mb="32px">
+        <StyledHero>
+          <Container>
+            <Heading as="h1" size="xl" mb="24px">
+              {TranslateString(500, 'RiceFarm Referral Program')}
+            </Heading>
+            <Text bold fontSize="20px">
+              {TranslateString(
+                502,
+                "Share the referral link below to invite your friends and earn 1% of your friends' earnings FOREVER!",
+              )}
+            </Text>
+          </Container>
+        </StyledHero>
+        <CurtainBottom />
+      </Box>
+      <Container>
+        <Cards>
+          <Card>
+            <CardHeader>
+              <Heading size="lg" color="secondary">
+                {TranslateString(999, `Total Referrals`)}
+              </Heading>
+            </CardHeader>
+            <CardBody>
+              <Text textAlign="left" mb="16px">
+                {referralData.totalReferrals}
+              </Text>
+            </CardBody>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <Heading size="lg" color="secondary">
+                {TranslateString(999, `Total Referral Commission`)}
+              </Heading>
+            </CardHeader>
+            <CardBody>
+              <Text textAlign="left" mb="16px">
+                {referralData.totalReferralCommissions} RICE
+              </Text>
+            </CardBody>
+          </Card>
+        </Cards>
+        <Card>
+          <CardHeader>
+            <Heading size="lg" color="secondary">
+              {TranslateString(999, `Your Referral Link`)}
+            </Heading>
+          </CardHeader>
+          <CardBody>
+            <Text textAlign="center" mb="16px">
+              {`${BASE_URL}/?ref=${account}`}
+            </Text>
+          </CardBody>
+        </Card>
+      </Container>
+    </>
   )
 }
 

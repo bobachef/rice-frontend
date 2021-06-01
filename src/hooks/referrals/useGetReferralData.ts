@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import { useWeb3React } from '@web3-react/core'
 import BigNumber from 'bignumber.js'
-import {useReferralContract} from 'hooks/useContract'
+import { useReferralContract } from 'hooks/useContract'
 import makeBatchRequest from 'utils/makeBatchRequest'
-import {ReferralData, ReferralState} from './types'
+import { ReferralData, ReferralState } from './types'
 
 /**
  * Gets all referral data
@@ -26,7 +26,7 @@ const useGetReferralData = (): ReferralData => {
   const setTotalCommissions = (commissionsEarned: BigNumber) => {
     setState((prevState) => ({
       ...prevState,
-      totalReferralCommissions: commissionsEarned
+      totalReferralCommissions: commissionsEarned,
     }))
   }
 
@@ -40,7 +40,7 @@ const useGetReferralData = (): ReferralData => {
       setState((prevState) => ({
         ...prevState,
         totalReferrals: numReferrals,
-        totalReferralCommissions: commissionsEarned
+        totalReferralCommissions: commissionsEarned,
       }))
     }
 
