@@ -4,6 +4,10 @@ export default {
     56: '0x058451c62b96c594ad984370eda8b6fd7197bbd4', // panther master chef 0x058451c62b96c594ad984370eda8b6fd7197bbd4
     // 56: '0x73feaa1eE314F8c655E354234017bE2193C9E24E', // original cake master chef
   },
+  riceReferral: {
+    97: '0x33beCfc69dED1e3Aa1Ff0d805F38017b84d58EaC',
+    56: '',
+  },
   sousChef: {
     97: '0xd3af5fe61dbaf8f73149bfcfa9fb653ff096029a',
     56: '0x6ab8463a4185b80905e05a9ff80a2d6b714b9e95',

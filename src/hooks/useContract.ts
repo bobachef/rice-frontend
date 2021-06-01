@@ -18,6 +18,7 @@ import {
   getTradingCompetitionContract,
   getEasterNftContract,
   getErc721Contract,
+  getReferralContract
 } from 'utils/contractHelpers'
 
 /**
@@ -110,4 +111,9 @@ export const useTradingCompetitionContract = () => {
 export const useEasterNftContract = () => {
   const web3 = useWeb3()
   return useMemo(() => getEasterNftContract(web3), [web3])
+}
+
+export const useReferralContract = () => {
+  const web3 = useWeb3()
+  return useMemo(() => getReferralContract(web3), [web3])
 }
