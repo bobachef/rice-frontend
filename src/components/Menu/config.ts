@@ -1,12 +1,11 @@
 import { MenuEntry } from '@ricefarm/uikit'
 
 const config: MenuEntry[] = [
-  {
-    label: 'Home',
-    icon: 'HomeIcon',
-    href: '/',
-  },
-
+  // {
+  //   label: 'Home',
+  //   icon: 'HomeIcon',
+  //   href: '/',
+  // },
   {
     label: 'TeslaSafe Swap',
     icon: 'TradeIcon',
@@ -21,17 +20,16 @@ const config: MenuEntry[] = [
       },
     ],
   },
-
-  {
-    label: 'Farms',
-    icon: 'FarmIcon',
-    href: '/farms',
-  },
-  {
-    label: 'Pools',
-    icon: 'PoolIcon',
-    href: '/pools',
-  },
+  // {
+  //   label: 'Farms',
+  //   icon: 'FarmIcon',
+  //   href: '/farms',
+  // },
+  // {
+  //   label: 'Pools',
+  //   icon: 'PoolIcon',
+  //   href: '/pools',
+  // },
   /*
   {
     label: 'Lottery',
@@ -109,20 +107,24 @@ const config: MenuEntry[] = [
     icon: 'MoreIcon',
     items: [
       // {
-      //   label: 'Contact',
-      //   href: 'https://docs.ricefarm.fi/contact-us',
-      // },
-      // {
       //   label: 'Voting',
       //   href: 'https://voting.ricefarm.fi',
       // },
       {
-        label: 'Github',
-        href: 'https://github.com/rice-farm',
+        label: "Github",
+        href: "https://github.com/rice-farm",
       },
       {
         label: 'Docs',
         href: 'https://docs.ricefarm.fi',
+      },
+      {
+        label: 'TeslaSafe',
+        href: 'https://teslasafe.fi',
+      },
+      {
+        label: "TeslaSafe Github",
+        href: "https://github.com/tesla-safe",
       },
       // {
       //   label: 'Blog',
