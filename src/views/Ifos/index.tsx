@@ -130,7 +130,7 @@ const Ifos = () => {
                         <li>Done</li>
                       </ul>
                     </Text>
-                    <Button as={Link} href="/#">
+                    <Button as={Link} href="https://docs.ricefarm.fi/products/ifo" target="_blank">
                       {TranslateString(999, 'Read More')}
                     </Button>
                   </StepCardBody>
@@ -150,7 +150,7 @@ const Ifos = () => {
                     Launch your project with RiceFarm, Binance Smart Chain’s fastest growing AMM project and liquidity
                     provider, to bring your token directly to the most active and rapidly growing community on BSC.
                   </Text>
-                  <Button as={Link} href="#">
+                  <Button as={Link} href="https://docs.ricefarm.fi/others/media" target="_blank">
                     {TranslateString(999, 'Apply to Launch')}
                   </Button>
                 </CardBody>
