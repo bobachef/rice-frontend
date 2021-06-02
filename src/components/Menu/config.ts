@@ -111,8 +111,8 @@ const config: MenuEntry[] = [
       //   href: 'https://voting.ricefarm.fi',
       // },
       {
-        label: "Github",
-        href: "https://github.com/rice-farm",
+        label: 'Github',
+        href: 'https://github.com/rice-farm',
       },
       {
         label: 'Docs',
@@ -123,8 +123,8 @@ const config: MenuEntry[] = [
         href: 'https://teslasafe.fi',
       },
       {
-        label: "TeslaSafe Github",
-        href: "https://github.com/tesla-safe",
+        label: 'TeslaSafe Github',
+        href: 'https://github.com/tesla-safe',
       },
       // {
       //   label: 'Blog',
