@@ -47,20 +47,16 @@ const Syrup: React.FC = () => {
 
   return (
     <>
-    <Header>
-      <Heading as="h1" size="xxl" textAlign="center" color="secondary" mb="24px">
-        {TranslateString(674, 'Rice Paddy')}
-      </Heading>
-      <Heading size="lg" textAlign="center" color="text">
-        <ul>
-          <li>{TranslateString(580, 'Stake $RICE to earn new tokens.')}</li>
-          <li>{TranslateString(486, 'You can unstake at any time.')}</li>
-          <li>{TranslateString(406, 'Rewards are calculated per block.')}</li>
-        </ul>
-      </Heading>
-    </Header>
-    <Page>
-      {/*  
+      <Header>
+        <Heading as="h1" size="xxl" textAlign="center" color="secondary" mb="24px">
+          {TranslateString(674, 'Rice Paddy')}
+        </Heading>
+        <Heading size="lg" textAlign="center" color="text">
+          {TranslateString(999, 'Stake Tokens to earn RICE.')}
+        </Heading>
+      </Header>
+      <Page>
+        {/*  
       <Hero>
         <div>
           <Heading as="h1" size="xxl" mb="16px">
