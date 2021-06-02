@@ -1,11 +1,11 @@
 import BigNumber from 'bignumber.js'
 
 export interface ReferralState {
-  totalReferrals: BigNumber
-  totalReferralCommissions: BigNumber
+  totalReferrals: string
+  totalReferralCommissions: string
 }
 
 export interface ReferralData extends ReferralState {
-  setTotalReferrals: (numReferrals: BigNumber) => void
-  setTotalCommissions: (commissionsEarned: BigNumber) => void
+  setTotalReferrals: (numReferrals: string) => void
+  setTotalCommissions: (commissionsEarned: string) => void
 }

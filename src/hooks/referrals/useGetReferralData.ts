@@ -17,13 +17,13 @@ const useGetReferralData = (): ReferralData => {
   const { account } = useWeb3React()
   const contract = useReferralContract()
 
-  const setTotalReferrals = (numReferrals: BigNumber) =>
+  const setTotalReferrals = (numReferrals: string) =>
     setState((prevState) => ({
       ...prevState,
       totalReferrals: numReferrals,
     }))
 
-  const setTotalCommissions = (commissionsEarned: BigNumber) => {
+  const setTotalCommissions = (commissionsEarned: string) => {
     setState((prevState) => ({
       ...prevState,
       totalReferralCommissions: commissionsEarned,
@@ -35,12 +35,16 @@ const useGetReferralData = (): ReferralData => {
       const [numReferrals, commissionsEarned] = (await makeBatchRequest([
         contract.methods.referralsCount(account).call,
         contract.methods.referrers(account).call,
-      ])) as [BigNumber, BigNumber]
+      ])) as [string, string]
+
+      // from hex to decimal
+      const refCount = parseInt(numReferrals, 16).toString()
+      const earnedAmount = parseInt(commissionsEarned, 16).toString()
 
       setState((prevState) => ({
         ...prevState,
-        totalReferrals: numReferrals,
-        totalReferralCommissions: commissionsEarned,
+        totalReferrals: refCount,
+        totalReferralCommissions: earnedAmount,
       }))
     }
 
