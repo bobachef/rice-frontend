@@ -17,6 +17,7 @@ import {
   BaseLayout,
   OpenNewIcon,
 } from '@ricefarm/uikit'
+import { formatNumber } from 'utils/formatBalance'
 import { Route, useRouteMatch } from 'react-router-dom'
 import Container from 'components/layout/Container'
 import { BASE_URL } from '../../config'
@@ -53,17 +54,18 @@ const getGradient = (isDark: boolean) => {
   return 'repeating-linear-gradient(to right, #6ee221, #6ee221 40px, #7ae953 40px, #7ae953 80px)'
 }
 
-const StyledHero = styled.div`
-  background: ${({ theme }) => getGradient(theme.isDark)};
-  padding-bottom: 40px;
-  padding-top: 40px;
-`
+const Header = styled.div`
+  padding: 32px 0px;
+  background: ${({ theme }) => theme.colors.gradients.bubblegum};
 
-const CurtainBottom = styled.div`
-  background-image: url('/images/curtain-bottom-${({ theme }) => (theme.isDark ? 'dark' : 'light')}.png');
-  background-repeat: repeat-x;
-  background-size: contain;
-  height: 20px;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-bottom:32px;
+
+  ${({ theme }) => theme.mediaQueries.sm} {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 `
 
 const Referrals = () => {
@@ -75,22 +77,14 @@ const Referrals = () => {
   if (!account) {
     return (
       <>
-        <Box mb="32px">
-          <StyledHero>
-            <Container>
-              <Heading as="h1" size="xl" mb="24px">
-                {TranslateString(500, 'RiceFarm Referral Program')}
-              </Heading>
-              <Text bold fontSize="20px">
-                {TranslateString(
-                  502,
-                  "Share the referral link below to invite your friends and earn 1% of your friends' earnings FOREVER!",
-                )}
-              </Text>
-            </Container>
-          </StyledHero>
-          <CurtainBottom />
-        </Box>
+        <Header>
+          <Heading as="h1" size="xxl" textAlign="center" color="secondary" mb="24px">
+            {TranslateString(674, 'RiceFarm Referral Program')}
+          </Heading>
+          <Heading size="lg" textAlign="center" color="text">
+            {TranslateString(999, 'Share the referral link below to invite your friends and earn 1% of your friends\' earnings FOREVER!')}
+          </Heading>
+        </Header>
         <Container>
           <Card>
             <CardBody>
@@ -109,32 +103,24 @@ const Referrals = () => {
 
   return (
     <>
-      <Box mb="32px">
-        <StyledHero>
-          <Container>
-            <Heading as="h1" size="xl" mb="24px">
-              {TranslateString(500, 'RiceFarm Referral Program')}
-            </Heading>
-            <Text bold fontSize="20px">
-              {TranslateString(
-                502,
-                "Share the referral link below to invite your friends and earn 1% of your friends' earnings FOREVER!",
-              )}
-            </Text>
-          </Container>
-        </StyledHero>
-        <CurtainBottom />
-      </Box>
+      <Header>
+        <Heading as="h1" size="xxl" textAlign="center" color="secondary" mb="24px">
+          {TranslateString(674, 'RiceFarm Referral Program')}
+        </Heading>
+        <Heading size="lg" textAlign="center" color="text">
+          {TranslateString(999, 'Share the referral link below to invite your friends and earn 1% of your friends\' earnings FOREVER!')}
+        </Heading>
+      </Header>
       <Container>
         <Cards>
           <Card>
             <CardHeader>
-              <Heading size="lg" color="secondary">
+              <Heading size="lg" textAlign="center" color="secondary">
                 {TranslateString(999, `Total Referrals`)}
               </Heading>
             </CardHeader>
             <CardBody>
-              <Text textAlign="left" mb="16px">
+              <Text textAlign="center" mb="16px">
                 {referralData.totalReferrals}
               </Text>
             </CardBody>
@@ -142,20 +128,23 @@ const Referrals = () => {
 
           <Card>
             <CardHeader>
-              <Heading size="lg" color="secondary">
+              <Heading size="lg" textAlign="center" color="secondary">
                 {TranslateString(999, `Total Referral Commission`)}
               </Heading>
             </CardHeader>
             <CardBody>
-              <Text textAlign="left" mb="16px">
-                {referralData.totalReferralCommissions} RICE
+              <Text textAlign="center" mb="16px">
+                {parseFloat(referralData.totalReferralCommissions).toLocaleString(undefined, {
+                  minimumFractionDigits: 4,
+                  maximumFractionDigits: 4
+                })} RICE
               </Text>
             </CardBody>
           </Card>
         </Cards>
         <Card>
           <CardHeader>
-            <Heading size="lg" color="secondary">
+            <Heading size="lg" textAlign="center" color="secondary">
               {TranslateString(999, `Your Referral Link`)}
             </Heading>
           </CardHeader>

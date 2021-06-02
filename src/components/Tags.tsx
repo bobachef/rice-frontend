@@ -1,6 +1,12 @@
 import React from 'react'
 import { Tag, VerifiedIcon, CommunityIcon, BinanceIcon } from '@ricefarm/uikit'
 
+const NoFeesTag = (props) => (
+  <Tag variant="secondary" outline startIcon={<VerifiedIcon color="secondary" />} {...props}>
+    No Fees
+  </Tag>
+)
+
 const CoreTag = (props) => (
   <Tag variant="secondary" outline startIcon={<VerifiedIcon color="secondary" />} {...props}>
     Core
@@ -25,4 +31,4 @@ const DualTag = (props) => (
   </Tag>
 )
 
-export { CoreTag, CommunityTag, BinanceTag, DualTag }
+export { NoFeesTag, CoreTag, CommunityTag, BinanceTag, DualTag }

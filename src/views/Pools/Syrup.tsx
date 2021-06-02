@@ -15,6 +15,19 @@ import PoolCard from './components/PoolCard'
 import PoolTabButtons from './components/PoolTabButtons'
 import Divider from './components/Divider'
 
+const Header = styled.div`
+  padding: 32px 0px;
+  background: ${({ theme }) => theme.colors.gradients.bubblegum};
+
+  padding-left: 16px;
+  padding-right: 16px;
+
+  ${({ theme }) => theme.mediaQueries.sm} {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+`
+
 const Syrup: React.FC = () => {
   const { path } = useRouteMatch()
   const TranslateString = useI18n()
@@ -33,7 +46,21 @@ const Syrup: React.FC = () => {
   )
 
   return (
+    <>
+    <Header>
+      <Heading as="h1" size="xxl" textAlign="center" color="secondary" mb="24px">
+        {TranslateString(674, 'Rice Paddy')}
+      </Heading>
+      <Heading size="lg" textAlign="center" color="text">
+        <ul>
+          <li>{TranslateString(580, 'Stake $RICE to earn new tokens.')}</li>
+          <li>{TranslateString(486, 'You can unstake at any time.')}</li>
+          <li>{TranslateString(406, 'Rewards are calculated per block.')}</li>
+        </ul>
+      </Heading>
+    </Header>
     <Page>
+      {/*  
       <Hero>
         <div>
           <Heading as="h1" size="xxl" mb="16px">
@@ -47,6 +74,7 @@ const Syrup: React.FC = () => {
         </div>
         <img src="/images/syrup.png" alt="Rice Paddy icon" width={410} height={191} />
       </Hero>
+      */}
       <PoolTabButtons stakedOnly={stakedOnly} setStakedOnly={setStakedOnly} />
       <Divider />
       <FlexLayout>
@@ -64,6 +92,7 @@ const Syrup: React.FC = () => {
         </Route>
       </FlexLayout>
     </Page>
+    </>
   )
 }
 
