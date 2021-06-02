@@ -30,19 +30,6 @@ const HarvestAction: React.FC<FarmCardActionsProps> = ({ earnings, pid }) => {
         {displayBalance}
         {earningsBusd > 0 && <CardBusdValue value={earningsBusd} />}
       </Heading>
-      <div>
-      <Button
-        scale="sm"
-        mb="12px"
-        disabled={rawEarningsBalance === 0 || pendingTx}
-        onClick={async () => {
-          setPendingTx(true)
-          await onReward()
-          setPendingTx(false)
-        }}
-      >
-        {TranslateString(562, 'Compound')}
-      </Button><br />
       <Button
         disabled={rawEarningsBalance === 0 || pendingTx}
         onClick={async () => {
@@ -53,7 +40,6 @@ const HarvestAction: React.FC<FarmCardActionsProps> = ({ earnings, pid }) => {
       >
         {TranslateString(562, 'Harvest')}
       </Button>
-      </div>
     </Flex>
   )
 }
