@@ -71,23 +71,23 @@ const Syrup: React.FC = () => {
         <img src="/images/syrup.png" alt="Rice Paddy icon" width={410} height={191} />
       </Hero>
       */}
-      <PoolTabButtons stakedOnly={stakedOnly} setStakedOnly={setStakedOnly} />
-      <Divider />
-      <FlexLayout>
-        <Route exact path={`${path}`}>
-          <>
-            {stakedOnly
-              ? orderBy(stakedOnlyPools, ['sortOrder']).map((pool) => <PoolCard key={pool.sousId} pool={pool} />)
-              : orderBy(openPools, ['sortOrder']).map((pool) => <PoolCard key={pool.sousId} pool={pool} />)}
-          </>
-        </Route>
-        <Route path={`${path}/history`}>
-          {orderBy(finishedPools, ['sortOrder']).map((pool) => (
-            <PoolCard key={pool.sousId} pool={pool} />
-          ))}
-        </Route>
-      </FlexLayout>
-    </Page>
+        <PoolTabButtons stakedOnly={stakedOnly} setStakedOnly={setStakedOnly} />
+        <Divider />
+        <FlexLayout>
+          <Route exact path={`${path}`}>
+            <>
+              {stakedOnly
+                ? orderBy(stakedOnlyPools, ['sortOrder']).map((pool) => <PoolCard key={pool.sousId} pool={pool} />)
+                : orderBy(openPools, ['sortOrder']).map((pool) => <PoolCard key={pool.sousId} pool={pool} />)}
+            </>
+          </Route>
+          <Route path={`${path}/history`}>
+            {orderBy(finishedPools, ['sortOrder']).map((pool) => (
+              <PoolCard key={pool.sousId} pool={pool} />
+            ))}
+          </Route>
+        </FlexLayout>
+      </Page>
     </>
   )
 }

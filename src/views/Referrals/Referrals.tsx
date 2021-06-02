@@ -60,7 +60,7 @@ const Header = styled.div`
 
   padding-left: 16px;
   padding-right: 16px;
-  margin-bottom:32px;
+  margin-bottom: 32px;
 
   ${({ theme }) => theme.mediaQueries.sm} {
     padding-left: 24px;
@@ -78,11 +78,14 @@ const Referrals = () => {
     return (
       <>
         <Header>
-          <Heading as="h1" size="xxl" textAlign="center" color="secondary" mb="24px">
+          <Heading as="h1" size="lg" textAlign="center" color="secondary" mb="24px">
             {TranslateString(674, 'RiceFarm Referral Program')}
           </Heading>
-          <Heading size="lg" textAlign="center" color="text">
-            {TranslateString(999, 'Share the referral link below to invite your friends and earn 1% of your friends\' earnings FOREVER!')}
+          <Heading size="md" textAlign="center" color="text">
+            {TranslateString(
+              999,
+              "Share the referral link below to invite your friends and earn 1% of your friends' earnings FOREVER!",
+            )}
           </Heading>
         </Header>
         <Container>
@@ -104,11 +107,14 @@ const Referrals = () => {
   return (
     <>
       <Header>
-        <Heading as="h1" size="xxl" textAlign="center" color="secondary" mb="24px">
+        <Heading as="h1" size="xl" textAlign="center" color="secondary" mb="24px">
           {TranslateString(674, 'RiceFarm Referral Program')}
         </Heading>
-        <Heading size="lg" textAlign="center" color="text">
-          {TranslateString(999, 'Share the referral link below to invite your friends and earn 1% of your friends\' earnings FOREVER!')}
+        <Heading size="md" textAlign="center" color="text">
+          {TranslateString(
+            999,
+            "Share the referral link below to invite your friends and earn 1% of your friends' earnings FOREVER!",
+          )}
         </Heading>
       </Header>
       <Container>
@@ -136,8 +142,9 @@ const Referrals = () => {
               <Text textAlign="center" mb="16px">
                 {parseFloat(referralData.totalReferralCommissions).toLocaleString(undefined, {
                   minimumFractionDigits: 4,
-                  maximumFractionDigits: 4
-                })} RICE
+                  maximumFractionDigits: 4,
+                })}{' '}
+                RICE
               </Text>
             </CardBody>
           </Card>
