@@ -108,14 +108,14 @@ const config: MenuEntry[] = [
     label: 'More',
     icon: 'MoreIcon',
     items: [
-      {
-        label: 'Contact',
-        href: 'https://docs.ricefarm.fi/contact-us',
-      },
-      {
-        label: 'Voting',
-        href: 'https://voting.ricefarm.fi',
-      },
+      // {
+      //   label: 'Contact',
+      //   href: 'https://docs.ricefarm.fi/contact-us',
+      // },
+      // {
+      //   label: 'Voting',
+      //   href: 'https://voting.ricefarm.fi',
+      // },
       {
         label: 'Github',
         href: 'https://github.com/rice-farm',
@@ -124,10 +124,10 @@ const config: MenuEntry[] = [
         label: 'Docs',
         href: 'https://docs.ricefarm.fi',
       },
-      {
-        label: 'Blog',
-        href: 'https://ricefarm.medium.com',
-      },
+      // {
+      //   label: 'Blog',
+      //   href: 'https://ricefarm.medium.com',
+      // },
       // {
       //   label: 'Merch',
       //   href: 'https://pancakeswap.creator-spring.com/',
