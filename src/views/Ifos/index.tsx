@@ -88,10 +88,13 @@ const Ifos = () => {
                         <li>Get TeslaSafe-BNB LP tokens by adding TeslaSafe and BNB liquidity</li>
                       </ul>
                     </Text>
-                    <Link external href='https://teslasafe.ricefarm.fi/#/swap'>
+                    <Link external href="https://teslasafe.ricefarm.fi/#/swap">
                       Buy TeslaSafe <OpenNewIcon ml="6px" />
                     </Link>
-                    <Link external href='https://teslasafe.ricefarm.fi/#/add/BNB/0x3504de9e61FDFf2Fc70f5cC8a6D1Ee493434C1Aa'>
+                    <Link
+                      external
+                      href="https://teslasafe.ricefarm.fi/#/add/BNB/0x3504de9e61FDFf2Fc70f5cC8a6D1Ee493434C1Aa"
+                    >
                       Get LP tokens <OpenNewIcon ml="6px" />
                     </Link>
                   </StepCardBody>
@@ -127,7 +130,7 @@ const Ifos = () => {
                         <li>Done</li>
                       </ul>
                     </Text>
-                    <Button as={Link} href="/#">
+                    <Button as={Link} href="https://docs.ricefarm.fi/products/ifo" target="_blank">
                       {TranslateString(999, 'Read More')}
                     </Button>
                   </StepCardBody>
@@ -147,7 +150,7 @@ const Ifos = () => {
                     Launch your project with RiceFarm, Binance Smart Chain’s fastest growing AMM project and liquidity
                     provider, to bring your token directly to the most active and rapidly growing community on BSC.
                   </Text>
-                  <Button as={Link} href="#">
+                  <Button as={Link} href="https://docs.ricefarm.fi/others/media" target="_blank">
                     {TranslateString(999, 'Apply to Launch')}
                   </Button>
                 </CardBody>

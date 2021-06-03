@@ -149,10 +149,9 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, account }
         <Text bold>{farm.depositFee}</Text>
       </Flex>
       <Flex justifyContent="space-between">
-        <Text>{TranslateString(318, 'Harvest Lockup')}:</Text>
+        <Text>{TranslateString(318, 'Harvest Delay')}:</Text>
         <Text bold>{farm.harvestInterval > 0 ? `${farm.harvestInterval / 60 / 60} hour(s)` : '0'}</Text>
       </Flex>
-
       <CardActionsContainer farm={farm} account={account} addLiquidityUrl={addLiquidityUrl} />
       <Divider />
       <ExpandableSectionButton

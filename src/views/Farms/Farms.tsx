@@ -294,10 +294,10 @@ const Farms: React.FC = () => {
   return (
     <>
       <Header>
-        <Heading as="h1" size="xxl" color="secondary" mb="24px">
+        <Heading as="h1" size="xxl" textAlign="center" color="secondary" mb="24px">
           {TranslateString(674, 'Farms')}
         </Heading>
-        <Heading size="lg" color="text">
+        <Heading size="lg" textAlign="center" color="text">
           {TranslateString(999, 'Stake Liquidity Pool (LP) tokens to earn RICE.')}
         </Heading>
       </Header>

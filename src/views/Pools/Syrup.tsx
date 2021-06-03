@@ -15,6 +15,19 @@ import PoolCard from './components/PoolCard'
 import PoolTabButtons from './components/PoolTabButtons'
 import Divider from './components/Divider'
 
+const Header = styled.div`
+  padding: 32px 0px;
+  background: ${({ theme }) => theme.colors.gradients.bubblegum};
+
+  padding-left: 16px;
+  padding-right: 16px;
+
+  ${({ theme }) => theme.mediaQueries.sm} {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+`
+
 const Syrup: React.FC = () => {
   const { path } = useRouteMatch()
   const TranslateString = useI18n()
@@ -33,7 +46,17 @@ const Syrup: React.FC = () => {
   )
 
   return (
-    <Page>
+    <>
+      <Header>
+        <Heading as="h1" size="xxl" textAlign="center" color="secondary" mb="24px">
+          {TranslateString(674, 'Rice Paddy')}
+        </Heading>
+        <Heading size="lg" textAlign="center" color="text">
+          {TranslateString(999, 'Stake Tokens to earn RICE.')}
+        </Heading>
+      </Header>
+      <Page>
+        {/*  
       <Hero>
         <div>
           <Heading as="h1" size="xxl" mb="16px">
@@ -47,23 +70,25 @@ const Syrup: React.FC = () => {
         </div>
         <img src="/images/syrup.png" alt="Rice Paddy icon" width={410} height={191} />
       </Hero>
-      <PoolTabButtons stakedOnly={stakedOnly} setStakedOnly={setStakedOnly} />
-      <Divider />
-      <FlexLayout>
-        <Route exact path={`${path}`}>
-          <>
-            {stakedOnly
-              ? orderBy(stakedOnlyPools, ['sortOrder']).map((pool) => <PoolCard key={pool.sousId} pool={pool} />)
-              : orderBy(openPools, ['sortOrder']).map((pool) => <PoolCard key={pool.sousId} pool={pool} />)}
-          </>
-        </Route>
-        <Route path={`${path}/history`}>
-          {orderBy(finishedPools, ['sortOrder']).map((pool) => (
-            <PoolCard key={pool.sousId} pool={pool} />
-          ))}
-        </Route>
-      </FlexLayout>
-    </Page>
+      */}
+        <PoolTabButtons stakedOnly={stakedOnly} setStakedOnly={setStakedOnly} />
+        <Divider />
+        <FlexLayout>
+          <Route exact path={`${path}`}>
+            <>
+              {stakedOnly
+                ? orderBy(stakedOnlyPools, ['sortOrder']).map((pool) => <PoolCard key={pool.sousId} pool={pool} />)
+                : orderBy(openPools, ['sortOrder']).map((pool) => <PoolCard key={pool.sousId} pool={pool} />)}
+            </>
+          </Route>
+          <Route path={`${path}/history`}>
+            {orderBy(finishedPools, ['sortOrder']).map((pool) => (
+              <PoolCard key={pool.sousId} pool={pool} />
+            ))}
+          </Route>
+        </FlexLayout>
+      </Page>
+    </>
   )
 }
 
