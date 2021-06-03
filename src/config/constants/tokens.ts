@@ -6,7 +6,7 @@ const tokens = {
   rice: {
     symbol: 'RICE',
     address: {
-      56: '0x1f546ad641b56b86fd9dceac473d1c7a357276b7', // currently panther todo: change to actual contract when deployed
+      56: '0xeA2cE3C20184C1814D372756360F4Be7621A70Bb',
       97: '0xeA2cE3C20184C1814D372756360F4Be7621A70Bb',
       decimals: 18,
       projectLink: 'https://ricefarm.fi/',

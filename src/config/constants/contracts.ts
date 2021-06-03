@@ -6,7 +6,7 @@ export default {
   },
   riceReferral: {
     97: '0x33beCfc69dED1e3Aa1Ff0d805F38017b84d58EaC',
-    56: '',
+    56: '0x1356eA6E5c7Ac06ec3Cff71643Ea7ab35809B474',
   },
   sousChef: {
     97: '0xd3af5fe61dbaf8f73149bfcfa9fb653ff096029a',
