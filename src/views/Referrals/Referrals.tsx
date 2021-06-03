@@ -127,7 +127,7 @@ const Referrals = () => {
             </CardHeader>
             <CardBody>
               <Text textAlign="center" mb="16px">
-                {referralData.totalReferrals}
+                {referralData.totalReferrals ? referralData.totalReferrals : '-'}
               </Text>
             </CardBody>
           </Card>
@@ -140,10 +140,11 @@ const Referrals = () => {
             </CardHeader>
             <CardBody>
               <Text textAlign="center" mb="16px">
-                {parseFloat(referralData.totalReferralCommissions).toLocaleString(undefined, {
+
+                {referralData.totalReferralCommissions ? parseFloat(referralData.totalReferralCommissions).toLocaleString(undefined, {
                   minimumFractionDigits: 4,
                   maximumFractionDigits: 4,
-                })}{' '}
+                }) : '-' }{' '}
                 RICE
               </Text>
             </CardBody>
