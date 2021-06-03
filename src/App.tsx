@@ -1,4 +1,5 @@
 import React, { useEffect, lazy } from 'react'
+import { useCookies } from 'react-cookie'
 import { Router, Redirect, Route, Switch } from 'react-router-dom'
 import { ResetCSS } from '@ricefarm/uikit'
 import BigNumber from 'bignumber.js'
@@ -13,6 +14,7 @@ import EasterEgg from './components/EasterEgg'
 import Pools from './views/Pools'
 import history from './routerHistory'
 
+
 // Route-based code splitting
 // Only pool is included in the main bundle because of it's the most visited page
 const Home = lazy(() => import('./views/Home'))
@@ -26,6 +28,8 @@ const NotFound = lazy(() => import('./views/NotFound'))
 // const Team = lazy(() => import('./views/Teams/Team'))
 // const Profile = lazy(() => import('./views/Profile'))
 // const TradingCompetition = lazy(() => import('./views/TradingCompetition'))
+
+
 
 // This config is required for number formating
 BigNumber.config({
@@ -44,6 +48,16 @@ const App: React.FC = () => {
   useFetchPublicData()
   useFetchProfile()
   useFetchPriceList()
+  
+  const query = new URLSearchParams(window.location.search)
+  const referralId = query.get('ref');
+  const [cookies, setCookie] = useCookies(['rice_swap_referral_id'])
+
+  if (typeof referralId !== 'undefined' && referralId != null) {
+    const d = new Date();
+    d.setTime(d.getTime() + (60*60*1000));
+    setCookie("rice_swap_referral_id", referralId, {path: "/", expires: d});
+  }
 
   return (
     <Router history={history}>

@@ -88,9 +88,10 @@ interface FarmCardProps {
   cakePrice?: BigNumber
   provider?: ProviderType
   account?: string
+  index?: number
 }
 
-const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, account }) => {
+const FarmCard: React.FC<FarmCardProps> = ({ index, farm, removed, cakePrice, account }) => {
   const TranslateString = useI18n()
 
   const [showExpandableSection, setShowExpandableSection] = useState(false)
@@ -124,6 +125,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, account }
         isCommunityFarm={farm.isCommunity}
         farmImage={farmImage}
         tokenSymbol={farm.token.symbol}
+        index={index}
       />
       {!removed && (
         <Flex justifyContent="space-between" alignItems="center">

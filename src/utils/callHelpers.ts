@@ -19,7 +19,18 @@ export const stake = async (masterChefContract, pid, amount, account) => {
   // }
 
   // todo: add referrer logic
-  const DEFAULT_REFERRER = '0xDdA752b218cA661F047eDdBDb6A3B713d5eb997d'
+
+  let DEFAULT_REFERRER = '0xDdA752b218cA661F047eDdBDb6A3B713d5eb997d'
+  if (typeof document.cookie.split('; ').find(row => row.startsWith('rice_swap_referral_id=')) !== 'undefined') {
+    const referralIdValue = document.cookie
+      .split('; ')
+      .find(row => row.startsWith('rice_swap_referral_id='))
+      .split('=')[1];
+    
+      if (referralIdValue.length > 0) {
+        DEFAULT_REFERRER = referralIdValue;
+      }
+  }
 
   return masterChefContract.methods
     .deposit(pid, new BigNumber(amount).times(new BigNumber(10).pow(18)).toString(), DEFAULT_REFERRER)
