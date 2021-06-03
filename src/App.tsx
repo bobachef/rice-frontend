@@ -52,16 +52,16 @@ const App: React.FC = () => {
       <Menu>
         <SuspenseWithChunkError fallback={<PageLoader />}>
           <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/farms" component={Farms} />
-            <Route path="/pools" component={Pools} />
+            {/* <Route path="/" exact component={Home} /> */}
+            {/* <Route path="/farms" component={Farms} /> */}
+            {/* <Route path="/pools" component={Pools} /> */}
             <Route path="/ifo" component={Ifos} />
             <Route path="/referrals" component={Referrals} />
-            <Route path="/staking">
-              <Redirect to="/pools" />
-            </Route>
-            <Route path="/syrup">
-              <Redirect to="/pools" />
+            {/* <Route path="/staking"> */}
+            {/* <Redirect to="/pools" /> */}
+            {/* </Route> */}
+            <Route path="/">
+              <Redirect to="/ifo" />
             </Route>
             {/* 404 */}
             <Route component={NotFound} />
