@@ -158,7 +158,14 @@ const Referrals = () => {
           <CardBody>
             <Text textAlign="center" mb="16px">
               {`${BASE_URL}/?ref=${account}`}
+              <br />
+              <Button 
+                scale="sm"
+                mt="12px" 
+                onClick={() => {navigator.clipboard.writeText(`${BASE_URL}/?ref=${account}`)}}>Copy
+              </Button>
             </Text>
+            
           </CardBody>
         </Card>
       </Container>
